@@ -18,7 +18,6 @@
 (el-get 'sync
         '(el-get
           anything
-          anything-complete
           anything-project
           anything-c-moccur
           auto-save-buffers-enhanced

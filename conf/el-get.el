@@ -20,6 +20,7 @@
           anything
           anything-complete
           anything-project
+          anything-c-moccur
           auto-save-buffers-enhanced
           cperl-mode
           perl-completion

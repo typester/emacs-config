@@ -1,5 +1,10 @@
 (add-to-list 'load-path (concat user-emacs-directory "el-get/el-get"))
 
+(setq
+ el-get-dir (concat user-emacs-directory "el-get")
+ el-get-verbose t
+ el-get-user-package-directory (concat user-emacs-directory "conf/init"))
+
 (unless (require 'el-get nil 'noerror)
   (with-current-buffer
       (url-retrieve-synchronously
@@ -7,11 +12,6 @@
     (let (el-get-master-branch)
       (goto-char (point-max))
       (eval-print-last-sexp))))
-
-(setq
- el-get-dir (concat user-emacs-directory "el-get")
- el-get-verbose t
- el-get-user-package-directory (concat user-emacs-directory "conf/init"))
 
 (add-to-list 'el-get-recipe-path (concat user-emacs-directory "recipes"))
 

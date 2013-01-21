@@ -19,6 +19,7 @@
                              "cocoa-el-get.el"
                              "cocoa-theme.el"
                              "cocoa-font.el"
+                             "cocoa-server.el"
                              ))
            (load (concat user-emacs-directory "conf/" conf))))
     (and (null window-system)

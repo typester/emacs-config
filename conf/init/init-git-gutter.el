@@ -1,4 +1,4 @@
-(require 'git-gutter-fringe)
+(require 'git-gutter)
 
 (add-hook 'after-save-hook
           (lambda ()

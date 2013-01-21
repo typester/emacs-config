@@ -5,9 +5,9 @@
       (substring (or load-file-name "~/.emacs.d/init.el") 0 -7))
      (conf-list (list
                  "init.el"
+                 "exec-path.el"
                  "el-get.el"
                  "cc-mode.el"
-                 "exec-path.el"
                  "flymake.el"
                  )))
   (progn

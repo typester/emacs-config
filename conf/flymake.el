@@ -1,33 +1,34 @@
 (require 'flymake)
+(require 'perl-completion)
 
-;; flymake for perl
-(defvar flymake-perl-err-line-patterns
-  '(("\\(.*\\) at \\([^ \n]+\\) line \\([0-9]+\\)[,.\n]" 2 3 nil 1)))
-(defconst flymake-allowed-perl-file-name-masks
-  '(("\\.pl$" flymake-perl-init)
-    ("\\.pm$" flymake-perl-init)
-    ("\\.t$" flymake-perl-init)
-    ("\\.psgi$" flymake-perl-init)))
+;(setq plcmp-debug t)
+;(setq flymake-log-level 3)
 
 (defun flymake-perl-init ()
   (plcmp-with-set-perl5-lib
-   (let* ((temp-file (flymake-init-create-temp-buffer-copy
-                      'flymake-create-temp-inplace))
-          (local-file (file-relative-name
-                       temp-file
-                       (file-name-directory buffer-file-name))))
-     (list "perl" (list "-wc" local-file)))))
+   (let* ((temp-file   (flymake-init-create-temp-buffer-copy
+                        'flymake-create-temp-inplace))
+          (local-file  (file-relative-name
+                        temp-file
+                        (file-name-directory buffer-file-name)))
+          (perl5lib (split-string (or (getenv "PERL5LIB") "") ":"))
+          (perl5opt (with-temp-buffer
+                      (dolist (lib perl5lib)
+                        (unless (equal lib "")
+                          (insert "-I" lib)))
+                      (buffer-string))))
+     (progn
+       (list "perl" (list "-wc" perl5opt local-file))))))
 
-(defun flymake-perl-load ()
-  (interactive)
-  (defadvice flymake-post-syntax-check (before flymake-force-check-was-interrupted)
-    (setq flymake-check-was-interrupted t))
-  (ad-activate 'flymake-post-syntax-check)
-  (setq flymake-allowed-file-name-masks (append flymake-allowed-file-name-masks flymake-allowed-perl-file-name-masks))
-  (setq flymake-err-line-patterns flymake-perl-err-line-patterns)
-  (flymake-mode t))
+(setq flymake-allowed-file-name-masks
+      (cons '("\\.\\(t\\|p[ml]\\|psgi\\)$"
+              flymake-perl-init
+              flymake-simple-cleanup
+              flymake-get-real-file-name)
+            flymake-allowed-file-name-masks))
 
-(add-hook 'cperl-mode-hook '(lambda () (flymake-perl-load)))
+(add-hook 'cperl-mode-hook
+          '(lambda () (flymake-mode t)))
 
 ;; M-e でエラー箇所に飛ぶ
 (defun next-flymake-error ()

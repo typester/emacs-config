@@ -26,4 +26,5 @@
           markdown-mode
           clmemo
           ee
+          git-gutter
           ))

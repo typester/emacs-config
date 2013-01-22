@@ -25,4 +25,5 @@
           perl-completion
           markdown-mode
           clmemo
+          ee
           ))

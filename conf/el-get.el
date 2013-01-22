@@ -25,4 +25,4 @@
           perl-completion
           markdown-mode
           clmemo
-          git-gutter))
+          ))

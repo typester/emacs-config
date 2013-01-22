@@ -10,12 +10,13 @@
     ("\\.psgi$" flymake-perl-init)))
 
 (defun flymake-perl-init ()
-  (let* ((temp-file (flymake-init-create-temp-buffer-copy
-                     'flymake-create-temp-inplace))
-         (local-file (file-relative-name
-                      temp-file
-                      (file-name-directory buffer-file-name))))
-    (list "perl" (list "-wc" local-file))))
+  (plcmp-with-set-perl5-lib
+   (let* ((temp-file (flymake-init-create-temp-buffer-copy
+                      'flymake-create-temp-inplace))
+          (local-file (file-relative-name
+                       temp-file
+                       (file-name-directory buffer-file-name))))
+     (list "perl" (list "-wc" local-file)))))
 
 (defun flymake-perl-load ()
   (interactive)

@@ -12,13 +12,13 @@
                         temp-file
                         (file-name-directory buffer-file-name)))
           (perl5lib (split-string (or (getenv "PERL5LIB") "") ":"))
-          (perl5opt (with-temp-buffer
-                      (dolist (lib perl5lib)
-                        (unless (equal lib "")
-                          (insert "-I" lib)))
-                      (buffer-string))))
+          (args '("-wc")))
      (progn
-       (list "perl" (list "-wc" perl5opt local-file))))))
+       (dolist (lib perl5lib)
+         (unless (equal lib "")
+           (add-to-list 'args (concat "-I" lib) t)))
+       (add-to-list 'args local-file t)
+       (list "perl" args)))))
 
 (setq flymake-allowed-file-name-masks
       (cons '("\\.\\(t\\|p[ml]\\|psgi\\)$"

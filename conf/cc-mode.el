@@ -1,6 +1,6 @@
 (require 'cc-mode)
 
-(add-hook 'c-mode-common-hook '(progn
+(add-hook 'c-mode-common-hook '(lambda ()
                                  (c-set-offset 'substatement-open 0)
                                  (c-set-offset 'case-label '+)
                                  (c-set-offset 'arglist-cont-nonempty '+)

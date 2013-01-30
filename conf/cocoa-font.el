@@ -6,6 +6,8 @@
 
 (set-fontset-font nil 'japanese-jisx0208
                   (font-spec :family "Hiragino Kaku Gothic ProN"))
+(set-fontset-font nil 'katakana-jisx0201
+                  (font-spec :family "Hiragino Kaku Gothic ProN"))
 
 (setq face-font-rescale-alist
       '((".*Menlo.*" . 1.0)

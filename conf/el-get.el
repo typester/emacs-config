@@ -27,4 +27,5 @@
           clmemo
           ee
           git-gutter
+          open-junk-file
           ))

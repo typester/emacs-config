@@ -10,6 +10,7 @@
                  "cc-mode.el"
                  "flymake.el"
                  "midnight.el"
+                 "misc.el"
                  )))
   (progn
     (dolist (conf conf-list)

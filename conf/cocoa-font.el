@@ -5,7 +5,7 @@
                   (font-spec :family "Menlo"))
 
 (set-fontset-font nil 'korean-ksc5601
-                  (font-spec :family "AppleGothic"))
+                  (font-spec :family "Nanum Gothic"))
 
 (dolist (code '(japanese-jisx0208 katakana-jisx0201))
   (set-fontset-font nil code

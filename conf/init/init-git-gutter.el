@@ -1,9 +1,9 @@
 (require 'git-gutter)
 
-(add-hook 'after-save-hook
-          (lambda ()
-            (when (zerop (call-process-shell-command "git rev-parse --show-toplevel"))
-              (git-gutter))))
+(global-git-gutter-mode t)
+
+;; モードライン表示はいらない
+(setq git-gutter:lighter "")
 
 ;; Cocoa時1文字だと表示がつぶれるので二文字で使う
 (setq git-gutter:modified-sign " =")

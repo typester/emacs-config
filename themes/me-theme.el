@@ -24,7 +24,7 @@
       (yellow "#fff269")
       (green "#82c600")
       (aqua "#60aae7")
-      (blue "#006fdc")
+      (blue "#6aa4f7")
       (purple "#ac59ff"))
 
   (custom-theme-set-faces

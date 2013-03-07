@@ -31,4 +31,5 @@
           open-junk-file
           emacs-w3m
           auto-complete
+          ddskk
           ))

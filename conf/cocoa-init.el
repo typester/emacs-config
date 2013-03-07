@@ -17,3 +17,6 @@
 
 ;; 関連づけなどからファイルを開く場合に新規ウィンドウを開かない
 (setq ns-pop-up-frames nil)
+
+;; C-z で最小化するのうざいのでころす
+(define-key global-map (kbd "C-z") nil)

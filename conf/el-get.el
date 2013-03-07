@@ -3,7 +3,8 @@
 (setq
  el-get-dir (concat user-emacs-directory "el-get")
  el-get-verbose t
- el-get-user-package-directory (concat user-emacs-directory "conf/init"))
+ el-get-user-package-directory (concat user-emacs-directory "conf/init")
+ el-get-generate-autoloads nil)
 
 (unless (require 'el-get nil 'noerror)
   (with-current-buffer

@@ -15,7 +15,7 @@
   (progn
     (dolist (conf conf-list)
       (load (concat user-emacs-directory "conf/" conf)))
-    (and (equal window-system 'ns)
+    (and (or (equal window-system 'ns) (equal window-system 'mac))
          (dolist (conf (list "cocoa-init.el"
                              "cocoa-el-get.el"
                              "cocoa-theme.el"

@@ -16,9 +16,9 @@
 ;;; カナモードのときにC-oしてもひらがなモードにもどる
 (defun my:skk-kakutei-key (arg)
   (interactive "P")
-  (if (not skk-henkan-mode)
-      (skk-j-mode-on)
-    (skk-kakutei arg)))
+  (if skk-henkan-mode
+      (skk-kakutei arg)
+    (skk-j-mode-on)))
 
 (add-to-list 'skk-rom-kana-rule-list
 	     '(skk-kakutei-key nil my:skk-kakutei-key))

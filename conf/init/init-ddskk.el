@@ -1,4 +1,4 @@
-(require 'skk-study) ; これをrequireしておかないと、下のskk-rom-kana-rule-listへの追加がうまく有効にならない
+(require 'skk-vars)
 
 ;; key
 (define-key global-map (kbd "C-x C-o") 'skk-mode)

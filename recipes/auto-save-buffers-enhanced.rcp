@@ -1,5 +1,5 @@
 (:name auto-save-buffers-enhanced
-       :type http
-       :url "http://svn.coderepos.org/share/lang/elisp/auto-save-buffers-enhanced/trunk/auto-save-buffers-enhanced.el"
+       :type github
+       :pkgname "kentaro/auto-save-buffers-enhanced"
        :features auto-save-buffers-enhanced
        :post-init (auto-save-buffers-enhanced t))

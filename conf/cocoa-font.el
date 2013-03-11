@@ -13,4 +13,5 @@
 
 (setq face-font-rescale-alist
       '((".*Menlo.*" . 1.0)
-        (".*Hiragino_Kaku_Gothic_ProN.*" . 1.2)))
+        (".*Hiragino.*" . 1.24)
+        (".*Nanum.*" . 1.24)))

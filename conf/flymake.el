@@ -4,6 +4,9 @@
 ;(setq plcmp-debug t)
 ;(setq flymake-log-level 3)
 
+;; disable GUI warnings
+(setq flymake-gui-warnings-enabled nil)
+
 (defun flymake-perl-init ()
   (plcmp-with-set-perl5-lib
    (let* ((temp-file   (flymake-init-create-temp-buffer-copy

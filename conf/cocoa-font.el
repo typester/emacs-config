@@ -1,5 +1,5 @@
 (set-face-attribute 'default nil
-                    :family "Menlo" :height 130)
+                    :family "Menlo" :height 120)
 
 (set-fontset-font nil 'unicode
                   (font-spec :family "Menlo"))

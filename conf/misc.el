@@ -1,3 +1,6 @@
+;; vc-mode 使わないのでoffに
+(setq vc-handled-backends ())
+
 ;; 開いてるバッファを開き直す Emacs 23.4 の cc-mode でなぜか indent が効かなくなったときに使う、、
 (defun reopen-buffer ()
   (interactive)

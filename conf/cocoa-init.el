@@ -20,3 +20,6 @@
 
 ;; C-z で最小化するのうざいのでころす
 (define-key global-map (kbd "C-z") nil)
+
+;; タイトルバー
+(setq frame-title-format "Emacs")

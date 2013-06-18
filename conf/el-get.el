@@ -33,5 +33,6 @@
           auto-complete
           ddskk
           go-mode
+          scss-mode
           org-mode
           ))

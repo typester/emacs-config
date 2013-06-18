@@ -32,5 +32,6 @@
           emacs-w3m
           auto-complete
           ddskk
+          go-mode
           org-mode
           ))

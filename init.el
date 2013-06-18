@@ -8,6 +8,7 @@
                  "exec-path.el"
                  "el-get.el"
                  "cc-mode.el"
+                 "go.el"
                  "flymake.el"
                  "midnight.el"
                  "misc.el"

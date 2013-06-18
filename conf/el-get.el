@@ -35,4 +35,5 @@
           go-mode
           scss-mode
           org-mode
+          lua-mode
           ))

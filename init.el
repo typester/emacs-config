@@ -11,6 +11,7 @@
                  "go.el"
                  "flymake.el"
                  "midnight.el"
+                 "blosxom.el"
                  "misc.el"
                  )))
   (progn

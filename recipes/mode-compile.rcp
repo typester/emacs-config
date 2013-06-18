@@ -1,0 +1,5 @@
+(:name mode-compile
+       :description "Smart command for compiling files according to major-mode."
+       :type http
+       :url "https://raw.github.com/emacsmirror/mode-compile/master/mode-compile.el"
+       :load-path ("."))

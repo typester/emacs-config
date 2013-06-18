@@ -13,6 +13,6 @@
     (call-interactively 'clmemo)))
 
 (define-key global-map (kbd "C-x M") 'clmemo)
-(define-key global-map (kbd "C-x C-M") (lambda ()
+(define-key global-map (kbd "C-x m") (lambda ()
                                          (interactive)
                                          (clmemo-with-file "~/clmemo.txt")))

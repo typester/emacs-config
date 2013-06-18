@@ -1,4 +1,5 @@
-(require 'skk-vars)
+(require 'skk)
+(require 'skk-dcomp)
 
 ;; key
 (define-key global-map (kbd "C-x C-o") 'skk-mode)
@@ -28,3 +29,21 @@
 ;; skk-latin-mode for all buffers
 (define-globalized-minor-mode global-skk-latin-mode skk-latin-mode skk-latin-mode-on)
 (global-skk-latin-mode 1)
+
+;; Tip 描画に popup-tip を利用してみる
+(require 'popup)
+(setq skk-tooltip-function
+  #'(lambda (tooltip-str)
+      (popup-tip tooltip-str)))
+
+(setq skk-show-tooltip t)
+
+
+;; 変換候補をinline（縦）で表示
+(setq skk-show-inline 'vertical)
+
+(when skk-show-inline
+  ;; 変数 `skk-treat-candidate-appearance-function' を利用して自前で候補に
+  ;; 色を付ける場合はこの変数を nil に設定する。
+  (setq skk-inline-show-face nil)
+  (setq skk-inline-show-background-color "SeaGreen4"))

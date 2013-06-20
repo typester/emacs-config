@@ -24,6 +24,7 @@
           auto-save-buffers-enhanced
           cperl-mode
           perl-completion
+          perl-debug
           markdown-mode
           clmemo
           ee

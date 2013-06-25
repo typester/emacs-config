@@ -1,0 +1,3 @@
+(:name clang-headers
+       :type svn
+       :url "http://llvm.org/svn/llvm-project/cfe/trunk/include/")

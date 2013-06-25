@@ -5,6 +5,9 @@
 ;; fontify code in code blocks
 (setq org-src-fontify-natively t)
 
+;; subscript & superscripts needs {} quote
+(setq org-use-sub-superscripts "{}")
+
 ;; TODO
 (setq org-log-done 'note)
 (setq org-todo-keywords

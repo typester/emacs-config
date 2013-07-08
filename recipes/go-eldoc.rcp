@@ -1,0 +1,5 @@
+(:name go-eldoc
+       :description "eldoc for go-mode"
+       :type github
+       :pkgname "syohex/emacs-go-eldoc")
+

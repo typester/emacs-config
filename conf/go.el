@@ -6,3 +6,7 @@
 (require 'go-flymake)
 
 (setenv "GOPATH" (expand-file-name "~/dev/go-workspace"))
+
+;; go-eldoc
+(require 'go-eldoc)
+(add-hook 'go-mode-hook 'go-eldoc-setup)

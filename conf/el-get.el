@@ -34,6 +34,7 @@
           auto-complete
           ddskk
           go-mode
+          go-eldoc
           scss-mode
           org-mode
           lua-mode

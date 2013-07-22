@@ -15,10 +15,8 @@
 
 ;; agenda
 (add-to-list 'org-agenda-files "~/Dropbox/org/projects")
+(add-to-list 'org-agenda-files "~/Dropbox/org/personal")
 (add-to-list 'org-agenda-files "~/Dropbox/org/todo.org")
-
-;; org-capture
-(setq org-default-notes-file "~/Dropbox/org/notes.org")
 
 (define-key global-map (kbd "C-c c") 'org-capture)
 (define-key global-map (kbd "C-c a") 'org-agenda)
@@ -29,7 +27,6 @@
       '(
         ("t" "Todo" entry (file+headline "~/Dropbox/org/todo.org" "Tasks")
          "* TODO %?\n  %a\n  %i")
-        ("p" "Pomodoro" entry (file+datetree "~/Dropbox/org/pomodoro.org"))
         ("m" "Memo" entry (file+datetree "~/Dropbox/org/memo.org"))
         ))
 

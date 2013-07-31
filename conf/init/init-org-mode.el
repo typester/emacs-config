@@ -17,6 +17,8 @@
 (add-to-list 'org-agenda-files "~/Dropbox/org/projects")
 (add-to-list 'org-agenda-files "~/Dropbox/org/personal")
 (add-to-list 'org-agenda-files "~/Dropbox/org/todo.org")
+(add-to-list 'org-agenda-files "~/Dropbox/org/diary.org")
+(add-to-list 'org-agenda-files "~/Dropbox/org/memo.org")
 
 (define-key global-map (kbd "C-c c") 'org-capture)
 (define-key global-map (kbd "C-c a") 'org-agenda)
@@ -28,6 +30,7 @@
         ("t" "Todo" entry (file+headline "~/Dropbox/org/todo.org" "Tasks")
          "* TODO %?\n  %a\n  %i")
         ("m" "Memo" entry (file+datetree "~/Dropbox/org/memo.org"))
+        ("d" "Diary" entry (file+datetree "~/Dropbox/org/diary.org"))
         ))
 
 ;; publish blosxom

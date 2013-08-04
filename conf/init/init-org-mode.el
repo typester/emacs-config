@@ -8,6 +8,9 @@
 ;; subscript & superscripts needs {} quote
 (setq org-use-sub-superscripts "{}")
 
+;; enable habit tracking
+(require 'org-habit)
+
 ;; TODO
 ;(setq org-log-done 'note) ;; まったく使ってないから一旦無効にしてみる
 (setq org-todo-keywords

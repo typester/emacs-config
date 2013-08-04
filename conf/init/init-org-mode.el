@@ -9,7 +9,7 @@
 (setq org-use-sub-superscripts "{}")
 
 ;; TODO
-(setq org-log-done 'note)
+;(setq org-log-done 'note) ;; まったく使ってないから一旦無効にしてみる
 (setq org-todo-keywords
       '((sequence "TODO(t)" "|" "DONE(d)" "CANCELLED(c)")))
 

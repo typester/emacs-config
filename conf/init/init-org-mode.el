@@ -33,7 +33,8 @@
         ("t" "Todo" entry (file+headline "~/Dropbox/org/todo.org" "Tasks")
          "* TODO %?\n  %a\n  %i")
         ("m" "Memo" entry (file+datetree "~/Dropbox/org/memo.org"))
-        ("d" "Diary" entry (file+datetree "~/Dropbox/org/diary.org"))
+        ("d" "Diary" entry (file+datetree "~/Dropbox/org/diary.org")
+         "* %U\n  %?\n  %a")
         ))
 
 ;; publish blosxom

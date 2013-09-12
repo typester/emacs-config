@@ -5,6 +5,9 @@
 ;; fontify code in code blocks
 (setq org-src-fontify-natively t)
 
+;; deadline warning day
+(setq org-deadline-warning-days 3)
+
 ;; subscript & superscripts needs {} quote
 (setq org-use-sub-superscripts "{}")
 

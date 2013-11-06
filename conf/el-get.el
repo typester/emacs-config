@@ -38,10 +38,8 @@
           scss-mode
           org-mode
           lua-mode
+          yasnippet
           ))
 
-(if (eq system-type 'darwin)
-    (el-get 'sync '(clang-complete-async-osx))
-  (if (locate-file "llvm-config" exec-path)
-      (el-get 'sync '(clang-complete-async))
-    (message "** Install llvm to complete to install clang-complete-async **")))
+(if (locate-file "llvm-config" exec-path)
+    (el-get 'sync '(clang-complete-async)))

@@ -18,9 +18,10 @@
 
 (el-get 'sync
         '(el-get
+          helm
+          helm-ag
+          helm-ls-git
           anything
-          anything-project
-          anything-c-moccur
           auto-save-buffers-enhanced
           cperl-mode
           perl-completion

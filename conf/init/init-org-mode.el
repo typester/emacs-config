@@ -19,6 +19,9 @@
 (setq org-todo-keywords
       '((sequence "TODO(t)" "|" "DONE(d)" "CANCELLED(c)")))
 
+;; org directory
+(setq org-directory "~/Dropbox/org")
+
 ;; agenda
 (add-to-list 'org-agenda-files "~/Dropbox/org/projects")
 (add-to-list 'org-agenda-files "~/Dropbox/org/personal")
@@ -26,18 +29,19 @@
 (add-to-list 'org-agenda-files "~/Dropbox/org/diary.org")
 (add-to-list 'org-agenda-files "~/Dropbox/org/memo.org")
 
-(define-key global-map (kbd "C-c c") 'org-capture)
-(define-key global-map (kbd "C-c a") 'org-agenda)
+(define-key global-map (kbd "C-x M") 'org-capture)
+(define-key global-map (kbd "C-x m") (lambda () (interactive) (org-capture nil "m")))
+(define-key global-map (kbd "C-x A") 'org-agenda)
 ;; C-c bはanything-projectで使っているのでC-c C-bにする。
 (define-key global-map (kbd "C-c C-b") 'org-iswitchb)
 
 (setq org-capture-templates
       '(
-        ("t" "Todo" entry (file+headline "~/Dropbox/org/todo.org" "Tasks")
+        ("t" "Todo" entry (file "~/Dropbox/org/todo.org")
          "* TODO %?\n  %a\n  %i")
-        ("m" "Memo" entry (file+datetree "~/Dropbox/org/memo.org"))
-        ("d" "Diary" entry (file+datetree "~/Dropbox/org/diary.org")
-         "* %U\n  %?\n  %a")
+
+        ("m" "Memo" entry (file (concat "~/Dropbox/howm/" (format-time-string "%Y/%m/%Y-%m-%d.org")))
+         "* %?\n  %T %a")
         ))
 
 ;; publish blosxom

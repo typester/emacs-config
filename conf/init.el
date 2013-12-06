@@ -96,3 +96,11 @@
   (interactive)
   (kill-buffer))
 (define-key global-map (kbd "C-x k") 'kill-current-buffer)
+
+;; orgとかで日付が日本語になると変なのでこうしちゃう
+(setq system-time-locale "C")
+
+;;; cocoa-* だと最後によみこまれて、helmとかのキーもきえてしまうので、C-zの無効はここでやる
+;(if (or (equal window-system 'ns) (equal window-system 'mac))
+;    (define-key global-map (kbd "C-z") nil))
+

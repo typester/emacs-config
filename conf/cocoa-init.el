@@ -20,6 +20,7 @@
 
 ;; C-z で最小化するのうざいのでころす
 (define-key global-map (kbd "C-z") nil)
+;(define-key global-map (kbd "C-x C-z") nil)  ;; init/init-howm.el でhowmのprefixとして指定してる
 
 ;; タイトルバー
 (setq frame-title-format "Emacs")

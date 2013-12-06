@@ -40,7 +40,14 @@
           org-mode
           lua-mode
           yasnippet
+          howm
           ))
 
 (if (locate-file "llvm-config" exec-path)
     (el-get 'sync '(clang-complete-async)))
+
+
+
+
+
+

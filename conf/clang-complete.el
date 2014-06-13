@@ -4,5 +4,5 @@
   (ac-clang-launch-completion-process)
   (yas/minor-mode-on))
 
-(if ac-clang-complete-executable
+(if (boundp 'ac-clang-complete-executable)
     (add-hook 'c-mode-common-hook 'ac-cc-mode-setup))

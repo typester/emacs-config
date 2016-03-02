@@ -44,6 +44,7 @@
           yaml-mode
           dockerfile-mode
           web-mode
+          swift-mode
           ))
 
 (if (locate-file "llvm-config" exec-path)

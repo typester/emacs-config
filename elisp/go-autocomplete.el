@@ -1,6 +1,6 @@
 ;;; go-autocomplete.el --- auto-complete-mode backend for go-mode
 
-;; Copyright (C) 2010  
+;; Copyright (C) 2010
 
 ;; Author: Mikhail <tensai@cirno.in> Kuryshev
 ;; Keywords: languages
@@ -21,12 +21,12 @@
 
 ;;; Commentary:
 
-;; Ensure that go-autocomplete in your load-path and add to your ~/.emacs 
+;; Ensure that go-autocomplete in your load-path and add to your ~/.emacs
 ;; following line:
 ;;
 ;; (require 'go-autocomplete)
 
-;; Also you could setup any combination (for example M-TAB) 
+;; Also you could setup any combination (for example M-TAB)
 ;; for invoking auto-complete:
 ;;
 ;; (require 'auto-complete-config)
@@ -38,9 +38,18 @@
   (require 'cl)
   (require 'auto-complete))
 
+;; Close gocode daemon at exit unless it was already running
+(eval-after-load "go-mode"
+  '(progn
+     (let* ((user (or (getenv "USER") "all"))
+            (sock (format (concat temporary-file-directory "gocode-daemon.%s") user)))
+       (unless (file-exists-p sock)
+         (add-hook 'kill-emacs-hook #'(lambda ()
+                                        (call-process "gocode" nil nil nil "close")))))))
+
 ;(defvar go-reserved-keywords
 ;  '("break" "case" "chan" "const" "continue" "default" "defer" "else"
-;    "fallthrough" "for" "func" "go" "goto" "if" "import" "interface" 
+;    "fallthrough" "for" "func" "go" "goto" "if" "import" "interface"
 ;    "map" "package" "range" "return" "select" "struct" "switch" "type" "var")
 ;  "Go reserved keywords.")
 
@@ -68,25 +77,26 @@
 
 (defun ac-go-invoke-autocomplete ()
   (let ((temp-buffer (generate-new-buffer "*gocode*")))
-    (prog2
-	(call-process-region (point-min)
-			     (point-max)
-			     "gocode"
-			     nil
-			     temp-buffer
-			     nil
-			     "-f=emacs"
-			     "autocomplete"
-			     (buffer-file-name)
-			     (concat "c" (int-to-string (- (point) 1))))
-	(with-current-buffer temp-buffer (buffer-string))
+    (unwind-protect
+        (progn
+          (call-process-region (point-min)
+                               (point-max)
+                               "gocode"
+                               nil
+                               temp-buffer
+                               nil
+                               "-f=emacs"
+                               "autocomplete"
+                               (or (buffer-file-name) "")
+                               (concat "c" (int-to-string (- (point) 1))))
+          (with-current-buffer temp-buffer (buffer-string)))
       (kill-buffer temp-buffer))))
 
 (defun ac-go-format-autocomplete (buffer-contents)
   (sort
    (split-string buffer-contents "\n" t)
-   '(lambda (a b) (string< (downcase a)
-			   (downcase b)))))
+   (lambda (a b) (string< (downcase a)
+                          (downcase b)))))
 
 (defun ac-go-get-candidates (strings)
   (let ((prop (lambda (entry)

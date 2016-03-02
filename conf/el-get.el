@@ -41,6 +41,9 @@
           lua-mode
           yasnippet
           howm
+          yaml-mode
+          dockerfile-mode
+          web-mode
           ))
 
 (if (locate-file "llvm-config" exec-path)

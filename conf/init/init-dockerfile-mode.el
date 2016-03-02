@@ -1,0 +1,2 @@
+(require 'dockerfile-mode)
+

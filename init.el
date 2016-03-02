@@ -10,6 +10,7 @@
                  "cc-mode.el"
                  "clang-complete.el"
                  "go.el"
+                 "ruby.el"
                  "flymake.el"
                  "midnight.el"
                  "blosxom.el"

@@ -12,9 +12,6 @@
 (setq ns-command-modifier (quote meta))
 (setq ns-alternate-modifier (quote super))
 
-;; full screen toggle
-(define-key global-map (kbd "M-RET") 'ns-toggle-fullscreen)
-
 ;; 関連づけなどからファイルを開く場合に新規ウィンドウを開かない
 (setq ns-pop-up-frames nil)
 
@@ -24,3 +21,18 @@
 
 ;; タイトルバー
 (setq frame-title-format "Emacs")
+
+;; 昔ながらのフルスクリーン
+(setq ns-use-native-fullscreen nil)
+
+;; フルスクリーントグル
+(defun toggle-fullscreen ()
+  "Toggle full screen on Macport"
+  (interactive)
+  (set-frame-parameter
+   nil 'fullscreen
+   (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
+
+;; full screen toggle
+(define-key global-map (kbd "M-RET") 'toggle-fullscreen)
+

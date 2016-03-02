@@ -5,7 +5,7 @@
 ;; goflymake
 (require 'go-flymake)
 
-(setenv "GOPATH" (expand-file-name "~/dev/go-workspace"))
+(setenv "GOPATH" (expand-file-name "~/dev"))
 
 ;; go-eldoc
 (require 'go-eldoc)

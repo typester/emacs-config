@@ -2,6 +2,8 @@
 (add-to-list 'load-path (concat el-get-dir "/org-mode/contrib/lisp"))
 (require 'org)
 
+(setq org-startup-folded nil)
+
 ;; fontify code in code blocks
 (setq org-src-fontify-natively t)
 
@@ -11,13 +13,16 @@
 ;; subscript & superscripts needs {} quote
 (setq org-use-sub-superscripts "{}")
 
-;; enable habit tracking
-(require 'org-habit)
+;; show first star in inline task
+(setq org-inlinetask-show-first-star t)
 
 ;; TODO
-;(setq org-log-done 'note) ;; まったく使ってないから一旦無効にしてみる
+(setq org-log-done 'time)
 (setq org-todo-keywords
       '((sequence "TODO(t)" "|" "DONE(d)" "CANCELLED(c)")))
+
+;; effort duration に p でポモドーロを設定できるように
+(add-to-list 'org-effort-durations '("p" . 25))
 
 ;; org directory
 (setq org-directory "~/Dropbox/org")
@@ -28,6 +33,9 @@
 (add-to-list 'org-agenda-files "~/Dropbox/org/todo.org")
 (add-to-list 'org-agenda-files "~/Dropbox/org/diary.org")
 (add-to-list 'org-agenda-files "~/Dropbox/org/memo.org")
+(add-to-list 'org-agenda-files "~/Dropbox/org/gcal.org")
+
+(setq org-agenda-start-with-log-mode t)
 
 (define-key global-map (kbd "C-x M") 'org-capture)
 (define-key global-map (kbd "C-x m") (lambda () (interactive) (org-capture nil "m")))

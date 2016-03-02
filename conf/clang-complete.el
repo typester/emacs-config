@@ -14,4 +14,3 @@
 (if (boundp 'ac-clang-complete-executable)
     (add-hook 'c-mode-common-hook 'ac-cc-mode-setup)
   (message "clang-complete-executable is not defined"))
-

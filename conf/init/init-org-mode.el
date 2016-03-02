@@ -1,6 +1,4 @@
-;; load contrib
-(add-to-list 'load-path (concat el-get-dir "/org-mode/contrib/lisp"))
-(require 'org)
+(load-library "org")
 
 (setq org-startup-folded nil)
 

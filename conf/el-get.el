@@ -45,6 +45,8 @@
           dockerfile-mode
           web-mode
           swift-mode
+          company-mode
+          systemd-mode
           ))
 
 (if (locate-file "llvm-config" exec-path)

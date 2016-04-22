@@ -46,6 +46,8 @@
           web-mode
           swift-mode
           company-mode
+          pos-tip                       ; require company-quickhelp
+          company-quickhelp
           systemd-mode
           ))
 

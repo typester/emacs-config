@@ -49,6 +49,7 @@
           pos-tip                       ; require company-quickhelp
           company-quickhelp
           systemd-mode
+          tide
           ))
 
 (if (locate-file "llvm-config" exec-path)

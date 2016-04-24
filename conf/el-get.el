@@ -38,6 +38,7 @@
           go-eldoc
           scss-mode
           org-mode
+          org-bullets
           lua-mode
           yasnippet
           howm

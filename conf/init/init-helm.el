@@ -7,3 +7,5 @@
 ; find-fileではhelmを使わない
 (add-to-list 'helm-completing-read-handlers-alist '(find-file . nil))
 
+;; helm updateしたら必要になった
+(global-set-key (kbd "M-x") 'helm-M-x)

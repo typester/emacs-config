@@ -51,6 +51,7 @@
           company-quickhelp
           systemd-mode
           tide
+          apib-mode
           ))
 
 (if (locate-file "llvm-config" exec-path)

@@ -11,3 +11,12 @@
       (kill-buffer)
       (find-file file-name)
       (goto-char pos))))
+
+;; 末尾スペース削除
+(run-with-idle-timer 5 t
+                     '(lambda ()
+                        (progn
+                          (if (string= major-mode "go-mode")
+                              (gofmt)
+                            (delete-trailing-whitespace))
+                          (save-buffer))))

@@ -19,4 +19,5 @@
                           (if (string= major-mode "go-mode")
                               (gofmt)
                             (delete-trailing-whitespace))
-                          (save-buffer))))
+                          (and (buffer-file-name)
+                               (save-buffer)))))

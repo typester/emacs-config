@@ -21,3 +21,6 @@
                             (delete-trailing-whitespace))
                           (and (buffer-file-name)
                                (save-buffer)))))
+
+;; lsの--diredオプションはつかわない
+(setq dired-use-ls-dired nil)

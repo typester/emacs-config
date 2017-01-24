@@ -52,13 +52,10 @@
           systemd-mode
           tide
           apib-mode
+          f
+          rust-mode
+          emacs-racer
           ))
 
 (if (locate-file "llvm-config" exec-path)
     (el-get 'sync '(clang-complete-async)))
-
-
-
-
-
-

@@ -55,6 +55,7 @@
           f
           rust-mode
           emacs-racer
+          toml-mode
           ))
 
 (if (locate-file "llvm-config" exec-path)

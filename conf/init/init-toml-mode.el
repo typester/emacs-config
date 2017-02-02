@@ -1,0 +1,2 @@
+(require 'toml-mode)
+

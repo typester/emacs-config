@@ -18,7 +18,9 @@
                         (progn
                           (if (string= major-mode "go-mode")
                               (gofmt)
-                            (delete-trailing-whitespace))
+                            (if (string= major-mode "rust-mode")
+                                (rustfmt-format-buffer)
+                              (delete-trailing-whitespace)))
                           (and (buffer-file-name)
                                (save-buffer)))))
 

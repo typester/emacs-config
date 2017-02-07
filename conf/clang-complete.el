@@ -1,4 +1,4 @@
-(defun ac-cc-mode-setup ()
+(defun my-ac-cc-mode-setup ()
   ;; update cflags
   (setq ac-clang-cflags
         (split-string
@@ -12,5 +12,5 @@
   (yas/minor-mode-on))
 
 (if (boundp 'ac-clang-complete-executable)
-    (add-hook 'c-mode-common-hook 'ac-cc-mode-setup)
+    (add-hook 'c-mode-common-hook 'my-ac-cc-mode-setup)
   (message "clang-complete-executable is not defined"))

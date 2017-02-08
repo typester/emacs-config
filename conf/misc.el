@@ -19,7 +19,7 @@
                           (if (string= major-mode "go-mode")
                               (gofmt)
                             (if (string= major-mode "rust-mode")
-                                (rustfmt-format-buffer)
+                                (rust-format-buffer)
                               (delete-trailing-whitespace)))
                           (and (buffer-file-name)
                                (save-buffer)))))

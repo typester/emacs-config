@@ -1,4 +1,0 @@
-(:name rustfmt
-       :description "Format rust code in emacs using rustfmt"
-       :type github
-       :pkgname "fbergroth/emacs-rustfmt")

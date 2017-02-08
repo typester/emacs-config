@@ -54,7 +54,6 @@
           apib-mode
           f
           rust-mode
-          rustfmt
           emacs-racer
           toml-mode
           ))

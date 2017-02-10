@@ -14,6 +14,7 @@
                  "flymake.el"
                  "midnight.el"
                  "blosxom.el"
+                 "auto-view-mode.el"
                  "misc.el"
                  )))
   (progn

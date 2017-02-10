@@ -26,3 +26,7 @@
 
 ;; lsの--diredオプションはつかわない
 (setq dired-use-ls-dired nil)
+
+;; package.el使ってないので
+(setq package-enable-at-startup nil)
+

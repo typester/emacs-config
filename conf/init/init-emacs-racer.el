@@ -8,3 +8,5 @@
 (setq company-tooltip-align-annotations t)
 
 (setq racer-cmd (executable-find "racer"))
+
+(define-key racer-mode-map (kbd "M-*") #'pop-tag-mark)

@@ -15,6 +15,7 @@
                  "midnight.el"
                  "blosxom.el"
                  "auto-view-mode.el"
+                 "baal.el"
                  "misc.el"
                  )))
   (progn
@@ -31,4 +32,3 @@
     (and (null window-system)
          (dolist (conf (list "nw-init.el"))
            (load (concat user-emacs-directory "conf/" conf))))))
-

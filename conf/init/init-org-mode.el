@@ -46,7 +46,7 @@
         ("t" "Todo" entry (file "~/Dropbox/org/todo.org")
          "* TODO %?\n  %a\n  %i")
 
-        ("m" "Memo" entry (file (concat "~/Dropbox/howm/" (format-time-string "%Y/%m/%Y-%m-%d.org")))
+        ("m" "Memo" entry (file (lambda() (concat "~/Dropbox/howm/" (format-time-string "%Y/%m/%Y-%m-%d.org"))))
          "* %?\n  %T %a")
         ))
 

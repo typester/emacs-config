@@ -29,6 +29,12 @@
                              "cocoa-server.el"
                              ))
            (load (concat user-emacs-directory "conf/" conf))))
+    (and (equal window-system 'x)
+         (dolist (conf (list "x-init.el"
+                             "x-el-get.el"
+                             "x-theme.el"
+                             ))
+           (load (concat user-emacs-directory "conf/" conf))))
     (and (null window-system)
          (dolist (conf (list "nw-init.el"))
            (load (concat user-emacs-directory "conf/" conf))))))

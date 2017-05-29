@@ -33,6 +33,7 @@
          (dolist (conf (list "x-init.el"
                              "x-el-get.el"
                              "x-theme.el"
+                             "x-font.el"
                              ))
            (load (concat user-emacs-directory "conf/" conf))))
     (and (null window-system)

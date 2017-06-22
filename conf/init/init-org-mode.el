@@ -21,17 +21,22 @@
 
 ;; effort duration に p でポモドーロを設定できるように
 (add-to-list 'org-effort-durations '("p" . 25))
+;;
+(eval-after-load "org-duration"
+  '(progn
+     (add-to-list 'org-duration-units '("p" . 25))
+     (org-duration-set-regexps)))
 
 ;; org directory
 (setq org-directory "~/Dropbox/org")
 
 ;; agenda
-(add-to-list 'org-agenda-files "~/Dropbox/org/projects")
-(add-to-list 'org-agenda-files "~/Dropbox/org/personal")
-(add-to-list 'org-agenda-files "~/Dropbox/org/todo.org")
-(add-to-list 'org-agenda-files "~/Dropbox/org/diary.org")
-(add-to-list 'org-agenda-files "~/Dropbox/org/memo.org")
+;;(add-to-list 'org-agenda-files "~/Dropbox/org/projects")
+;;(add-to-list 'org-agenda-files "~/Dropbox/org/personal")
+(add-to-list 'org-agenda-files "~/Dropbox/org/gtd.org")
 (add-to-list 'org-agenda-files "~/Dropbox/org/gcal.org")
+(add-to-list 'org-agenda-files "~/Dropbox/org/gcal-work.org")
+(add-to-list 'org-agenda-files "~/Dropbox/org/diary2.org")
 
 (setq org-agenda-start-with-log-mode t)
 
@@ -43,12 +48,27 @@
 
 (setq org-capture-templates
       '(
-        ("t" "Todo" entry (file "~/Dropbox/org/todo.org")
-         "* TODO %?\n  %a\n  %i")
+        ("t" "Todo" entry (file+headline "~/Dropbox/org/gtd.org" "Tasks")
+         "* TODO %^{Brief description} %^g\n  %?\n  Added: %U")
 
         ("m" "Memo" entry (file (lambda() (concat "~/Dropbox/howm/" (format-time-string "%Y/%m/%Y-%m-%d.org"))))
          "* %?\n  %T %a")
         ))
+
+(setq org-agenda-custom-commands
+      '(("H" "Office and Home Lists"
+         ((agenda)
+          (tags-todo "OFFICE")
+          (tags-todo "HOME")
+          (tags-todo "COMPUTER")
+          (tags-todo "DVD")
+          (tags-todo "READING")))
+        ("D" "Daily Action List"
+         ((agenda "" ((org-agenda-ndays 1)
+                      (org-agenda-sorting-strategy
+                       (quote ((agenda time-up priority-down tag-up) )))
+                      (org-deadline-warning-days 0)
+                      ))))))
 
 ;; publish blosxom
 (setq org-publish-project-alist

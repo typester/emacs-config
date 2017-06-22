@@ -16,6 +16,9 @@
 
 (add-to-list 'el-get-recipe-path (concat user-emacs-directory "recipes"))
 
+;; ddskkだけ先に読み込む
+(el-get 'sync '(popup ddskk))
+
 (el-get 'sync
         '(el-get
           helm
@@ -33,7 +36,6 @@
           open-junk-file
           emacs-w3m
           auto-complete
-          ddskk
           go-mode
           go-eldoc
           scss-mode

@@ -9,3 +9,7 @@
 
 ;; helm updateしたら必要になった
 (global-set-key (kbd "M-x") 'helm-M-x)
+
+;; skk
+(define-key helm-map (kbd "C-o") 'skk-kakutei)
+

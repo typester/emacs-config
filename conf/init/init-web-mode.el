@@ -21,5 +21,5 @@
   (setq tab-width 2))
 (add-hook 'web-mode-hook 'my-web-mode-hook)
 
-(setq web-mode-enable-engine-detection t)
-
+;; バグってるので一旦使わない https://github.com/fxbois/web-mode/issues/864
+;;(setq web-mode-enable-engine-detection t)

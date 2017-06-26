@@ -25,7 +25,10 @@
 (eval-after-load "org-duration"
   '(progn
      (add-to-list 'org-duration-units '("p" . 25))
-     (org-duration-set-regexps)))
+     (org-duration-set-regexps)
+     (setq org-duration-format '(("p" . t) (special . 1)))))
+
+(setq org-agenda-overriding-columns-format "%48ITEM(Details) %TAGS(Context) %7TODO(To Do) %5EFFORT(Time) %CLOCKSUM(Clock)")
 
 ;; org directory
 (setq org-directory "~/Dropbox/org")

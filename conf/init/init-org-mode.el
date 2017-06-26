@@ -56,6 +56,9 @@
 
         ("m" "Memo" entry (file (lambda() (concat "~/Dropbox/howm/" (format-time-string "%Y/%m/%Y-%m-%d.org"))))
          "* %?\n  %T %a")
+
+        ("d" "Diary" entry (file+olp+datetree "~/Dropbox/org/diary2.org")
+         "* %?\nEntered on %U\n  %i\n  %a")
         ))
 
 (setq org-agenda-custom-commands

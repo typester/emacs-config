@@ -26,3 +26,7 @@
               (eldoc-mode +1)
               (auto-complete-mode -1)
               (company-mode-on))))
+
+(let ((tsserver "/usr/local/node/bin/tsserver"))
+  (if (file-executable-p tsserver)
+      (setq tide-tsserver-executable tsserver)))

@@ -30,3 +30,5 @@
 (let ((tsserver "/usr/local/node/bin/tsserver"))
   (if (file-executable-p tsserver)
       (setq tide-tsserver-executable tsserver)))
+
+(define-key web-mode-map (kbd "C-;") 'company-complete)

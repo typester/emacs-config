@@ -24,6 +24,8 @@
           helm
           helm-ag
           helm-ls-git
+          htmlize
+          s
           anything
           auto-save-buffers-enhanced
           cperl-mode

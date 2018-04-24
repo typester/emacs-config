@@ -20,7 +20,9 @@
                               (gofmt)
                             (if (string= major-mode "rust-mode")
                                 (rust-format-buffer)
-                              (delete-trailing-whitespace)))
+                              (if (symbol-value 'tide-mode)
+                                  (tide-format)
+                                (delete-trailing-whitespace))))
                           (and (buffer-file-name)
                                (save-buffer)))))
 
@@ -29,4 +31,3 @@
 
 ;; package.el使ってないので
 (setq package-enable-at-startup nil)
-

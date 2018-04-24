@@ -27,7 +27,7 @@
               (auto-complete-mode -1)
               (company-mode-on))))
 
-(let ((tsserver "/usr/local/node/bin/tsserver"))
+(let ((tsserver (executable-find "tsserver")))
   (if (file-executable-p tsserver)
       (setq tide-tsserver-executable tsserver)))
 

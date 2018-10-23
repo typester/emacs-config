@@ -28,7 +28,10 @@
           s
           anything
           auto-save-buffers-enhanced
-          cperl-mode
+;          cperl-mode
+          lsp-mode
+          company-lsp
+          emacs-cquery
           perl-completion
           perl-debug
           markdown-mode

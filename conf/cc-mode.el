@@ -10,7 +10,10 @@
                                  (c-set-offset 'inextern-lang 0) ; extern "C"
                                  (setq tab-width 4)
                                  (setq c-basic-offset tab-width)
-                                 (setq indent-tabs-mode nil)))
+                                 (setq indent-tabs-mode nil)
+                                 (auto-complete-mode -1)
+                                 (company-mode 1)
+                                 (lsp-cquery-enable)))
 
 
 ;; こいつらがふくまれてたらobjc-modeにする

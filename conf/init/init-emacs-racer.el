@@ -5,6 +5,7 @@
 (add-hook 'racer-mode-hook #'company-mode)
 
 (define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
+(define-key rust-mode-map (kbd "C-;") #'company-complete)
 (setq company-tooltip-align-annotations t)
 
 (setq racer-cmd (executable-find "racer"))

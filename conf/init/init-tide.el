@@ -14,6 +14,9 @@
 ;; aligns annotation to the right hand side
 (setq company-tooltip-align-annotations t)
 
+;; Completion dropdown will contain detailed method information
+(setq tide-completion-detailed t)
+
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . web-mode))
 (add-hook 'web-mode-hook

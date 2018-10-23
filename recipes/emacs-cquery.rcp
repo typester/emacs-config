@@ -1,0 +1,5 @@
+(:name emacs-cquery
+       :description "Emacs client for cquery, a low-latency language server supporting multi-million line C++ code-bases"
+       :type github
+       :depends (lsp-mode dash)
+       :pkgname "cquery-project/emacs-cquery")

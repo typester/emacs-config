@@ -1,0 +1,14 @@
+(:name company-lsp
+       :description "Major-mode for Apple's Swift programming language"
+       :type github
+       :depends (lsp-mode company-mode s dash)
+       :pkgname "tigersoldier/company-lsp")
+
+
+
+
+
+
+
+
+

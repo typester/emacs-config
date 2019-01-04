@@ -59,6 +59,15 @@
 
         ("d" "Diary" entry (file+olp+datetree "~/Dropbox/org/diary2.org")
          "* %?\nEntered on %U\n  %i\n  %a")
+
+        ("b" "Blog" plain (file (lambda ()
+                                  (let* ((slug (read-string "slug: "))
+                                         (dir (concat "~/Dropbox/org/public/unknownplace.org/blog/"
+                                                      (format-time-string "%Y/%m/%d"))))
+                                    (require 'org-id)
+                                    (make-directory dir t)
+                                    (concat dir "/" slug ".org"))))
+         "#+TITLE: %?\n#+DATE: %T\n#+TAGS:\n#+EID: %(org-id-uuid)\n\n")
         ))
 
 (setq org-agenda-custom-commands
@@ -78,9 +87,16 @@
 
 ;; publish blosxom
 (setq org-publish-project-alist
-      '(("blosxom"
-         :base-directory "~/Dropbox/org/public/"
+      '(
+;;        ("blosxom"
+;;         :base-directory "~/Dropbox/org/public/"
+;;         :base-extension "org"
+;;         :publishing-directory "~/Dropbox/blosxom/"
+;;         :publishing-function org-blosxom-publish-to-txt
+;;         :recursive t)
+        ("blog"
+         :base-directory "~/Dropbox/org/public/unknownplace.org"
          :base-extension "org"
-         :publishing-directory "~/Dropbox/blosxom/"
-         :publishing-function org-blosxom-publish-to-txt
+         :publishing-directory "~/dev/src/github.com/typester/unknownplace.org/data"
+         :publishing-function org-html-json-publish-to-json
          :recursive t)))

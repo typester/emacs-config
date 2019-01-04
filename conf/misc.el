@@ -20,9 +20,7 @@
                               (gofmt)
                             (if (string= major-mode "rust-mode")
                                 (rust-format-buffer)
-                              (if (symbol-value 'tide-mode)
-                                  (tide-format)
-                                (delete-trailing-whitespace))))
+                              (delete-trailing-whitespace)))
                           (and (buffer-file-name)
                                (save-buffer)))))
 

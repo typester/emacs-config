@@ -11,3 +11,6 @@
 (setq racer-cmd (executable-find "racer"))
 
 (define-key racer-mode-map (kbd "M-*") #'pop-tag-mark)
+
+;; workaround a bug that racer completions for third-paty crate doesn't working
+(setenv "CARGO_HOME" (expand-file-name "~/.cargo"))

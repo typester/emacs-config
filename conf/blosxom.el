@@ -1,4 +1,5 @@
 (require 'ox-blosxom)
+(require 'ox-html-json)
 
 (defun htmlize-dump-all-faces ()
   (interactive)

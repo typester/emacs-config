@@ -64,6 +64,7 @@
           emacs-racer
           toml-mode
           po-mode
+          vue-mode
           ))
 
 (if (locate-file "llvm-config" exec-path)

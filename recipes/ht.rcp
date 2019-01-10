@@ -1,0 +1,4 @@
+(:name ht
+       :description "The missing hash table library for Emacs"
+       :type github
+       :pkgname "Wilfred/ht.el")

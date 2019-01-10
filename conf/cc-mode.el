@@ -1,4 +1,5 @@
 (require 'cc-mode)
+(require 'yasnippet)
 
 (add-hook 'c-mode-common-hook '(lambda ()
                                  (c-set-offset 'substatement-open 0)
@@ -12,8 +13,13 @@
                                  (setq c-basic-offset tab-width)
                                  (setq indent-tabs-mode nil)
                                  (auto-complete-mode -1)
+                                 (setq cquery-extra-init-params '(:completion (:detailedLabel t)))
+                                 (setq lsp-eldoc-hook '(lsp-hover)) ; default value (lsp-document-highlight lsp-hover) but i don't like document-highlight feature
+                                 (set (make-local-variable 'company-backends)
+                                      '((company-lsp company-yasnippet)))
                                  (company-mode 1)
-                                 (lsp-cquery-enable)))
+                                 (yas-minor-mode 1)
+                                 (lsp)))
 
 
 ;; こいつらがふくまれてたらobjc-modeにする

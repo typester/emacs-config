@@ -1,6 +1,0 @@
-(:name swift-mode
-       :description "Major-mode for Apple's Swift programming language"
-       :type github
-       :depends flycheck
-       :compile nil
-       :pkgname "chrisbarrett/swift-mode")

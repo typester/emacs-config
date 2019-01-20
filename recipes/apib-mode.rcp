@@ -1,5 +1,0 @@
-(:name apib-mode
-       :description "Emacs API Blueprint major mode"
-       :type github
-       :depends markdown-mode
-       :pkgname "w-vi/apib-mode")

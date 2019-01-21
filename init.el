@@ -5,7 +5,7 @@
 ;; load common config
 (dolist (conf '("common.el"
                 "path.el"
-		        "straight.el"
+                "straight.el"
                 "autosave.el"
                 "ivy.el"
                 "company.el"

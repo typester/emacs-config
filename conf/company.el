@@ -2,6 +2,7 @@
 (straight-use-package 'company-quickhelp)
 
 (require 'company)
+(require 'company-quickhelp)
 
 ;; use C-n, C-p to select candidates
 (define-key company-active-map (kbd "C-n") 'company-select-next)
@@ -58,6 +59,7 @@
 
 ;; global company mode
 (add-hook 'after-init-hook 'global-company-mode)
+(add-hook 'after-init-hook 'company-quickhelp-mode)
 
 ;; global completion key
-(define-key global-map (kbd "C-\\") 'company-complete)
+(define-key global-map (kbd "C-;") 'company-complete)

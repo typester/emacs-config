@@ -1,8 +1,8 @@
-(straight-use-package '(ivy
-                        :type git
-                        :host github :repo "abo-abo/swiper"))
+(straight-use-package 'ivy)
+(straight-use-package 'counsel)
 
 (require 'ivy)
+(require 'counsel)
 
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)

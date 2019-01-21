@@ -6,12 +6,14 @@
 (dolist (conf '("common.el"
 		        "straight.el"
                 "autosave.el"
-                "ivy.el"))
+                "ivy.el"
+                "company.el"))
   (load (concat user-emacs-directory "conf/" conf)))
 
 ;; window system specific config
 (when (null window-system)
-  (dolist (conf '("nw-common.el"))
+  (dolist (conf '("nw-common.el"
+                  "nw-customize.el"))
     (load (concat user-emacs-directory "conf/" conf))))
 
 ;; load termux config

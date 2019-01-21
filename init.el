@@ -24,7 +24,9 @@
                   "x-font.el"
                   "x-theme.el")))
 (when (null window-system)
-  (my/load-conf '("nw-common.el")))
+  (my/load-conf '("nw-common.el"))
+  (when (>= (display-color-cells) 256)
+    (my/load-conf '("x-theme.el"))))
 
 ;; load termux config
 ;; currently detect termux by check arch because I don't have any other arm devices

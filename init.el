@@ -13,6 +13,7 @@
                 "autosave.el"
                 "ivy.el"
                 "company.el"
+                "flycheck.el"
                 "eglot.el"
                 "rust.el"))
 

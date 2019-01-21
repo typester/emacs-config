@@ -4,10 +4,13 @@
 
 ;; load common config
 (dolist (conf '("common.el"
+                "path.el"
 		        "straight.el"
                 "autosave.el"
                 "ivy.el"
-                "company.el"))
+                "company.el"
+                "eglot.el"
+                "rust.el"))
   (load (concat user-emacs-directory "conf/" conf)))
 
 ;; window system specific config

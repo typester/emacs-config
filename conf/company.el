@@ -59,3 +59,5 @@
 ;; global company mode
 (add-hook 'after-init-hook 'global-company-mode)
 
+;; global completion key
+(define-key global-map (kbd "C-\\") 'company-complete)

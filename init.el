@@ -15,6 +15,7 @@
                 "company.el"
                 "flycheck.el"
                 "eglot.el"
+                "c.el"
                 "rust.el"))
 
 ;; window system specific config

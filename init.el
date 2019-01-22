@@ -9,14 +9,15 @@
 ;; load common config
 (my/load-conf '("common.el"
                 "path.el"
-                "straight.el"
+                "el-get.el"
                 "autosave.el"
                 "ivy.el"
                 "company.el"
                 "flycheck.el"
                 "eglot.el"
                 "c.el"
-                "rust.el"))
+                "rust.el"
+                ))
 
 ;; window system specific config
 (when (equal window-system 'x)

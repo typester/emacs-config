@@ -1,0 +1,3 @@
+(:name jsonrpc
+       :description "JSON-RPC library"
+       :type elpa)

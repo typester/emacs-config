@@ -1,4 +1,4 @@
-(straight-use-package 'flycheck)
+(el-get-bundle flycheck)
 
 (require 'flycheck)
 

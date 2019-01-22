@@ -1,5 +1,4 @@
-(straight-use-package 'ivy)
-(straight-use-package 'counsel)
+(el-get-bundle swiper)
 
 (require 'ivy)
 (require 'counsel)

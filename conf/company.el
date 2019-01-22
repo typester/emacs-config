@@ -1,5 +1,5 @@
-(straight-use-package 'company)
-(straight-use-package 'company-quickhelp)
+(el-get-bundle company-mode)
+(el-get-bundle company-quickhelp)
 
 (require 'company)
 (require 'company-quickhelp)

@@ -19,6 +19,7 @@
                 "ivy.el"
                 "company.el"
                 "flycheck.el"
+                "org.el"
                 "eglot.el"
                 "c.el"
                 "rust.el"

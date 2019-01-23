@@ -22,6 +22,7 @@
                 "eglot.el"
                 "c.el"
                 "rust.el"
+                "typescript.el"
                 "misc.el"
                 ))
 

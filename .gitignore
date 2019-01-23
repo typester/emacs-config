@@ -5,3 +5,4 @@ elpa/*
 straight/*
 conf/*-customize.el
 network-security.data
+recentf

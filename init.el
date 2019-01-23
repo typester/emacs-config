@@ -17,6 +17,7 @@
                 "eglot.el"
                 "c.el"
                 "rust.el"
+                "misc.el"
                 ))
 
 ;; window system specific config

@@ -26,6 +26,7 @@
                 "rust.el"
                 "typescript.el"
                 "misc.el"
+                "skk.el"
                 ))
 
 ;; window system specific config

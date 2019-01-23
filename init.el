@@ -6,6 +6,11 @@
   (dolist (conf conf-list)
     (load (concat user-emacs-directory "conf/" conf))))
 
+(defun my/ensure-file-exists (file)
+  (when (not (file-exists-p file))
+    (with-temp-buffer (write-file file)))
+  file)
+
 ;; load common config
 (my/load-conf '("common.el"
                 "path.el"

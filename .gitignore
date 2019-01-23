@@ -3,3 +3,4 @@ el-get/*
 elpa/*
 *.elc
 straight/*
+conf/*-customize.el

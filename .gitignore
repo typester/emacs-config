@@ -4,3 +4,4 @@ elpa/*
 *.elc
 straight/*
 conf/*-customize.el
+network-security.data

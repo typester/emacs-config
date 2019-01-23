@@ -2,4 +2,4 @@
        :description "Adds documentation popup to completion candidates"
        :type github
        :pkgname "expez/company-quickhelp"
-       :depends (pos-tip))
+       :depends (company-mode pos-tip))

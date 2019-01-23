@@ -20,6 +20,7 @@
                 "company.el"
                 "flycheck.el"
                 "org.el"
+                "howm.el"
                 "eglot.el"
                 "c.el"
                 "rust.el"

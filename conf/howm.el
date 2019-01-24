@@ -5,7 +5,7 @@
 
   (setq howm-directory "~/drive/howm")
   (setq howm-view-use-grep t)
-  (setq howm-file-name-format "%Y/%m/%Y-%m-%d.org")
+  (setq howm-file-name-format "%Y/%m/%Y-%m-%d-%s.org")
   (setq howm-view-title-header "*")
   (setq howm-list-normalizer 'howm-view-sort-by-reverse-date)
   (setq howm-template "* %cursor\n  %date\n  ")

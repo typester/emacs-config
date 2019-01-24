@@ -14,6 +14,11 @@
       (eval-print-last-sexp))))
 
 (add-to-list 'el-get-recipe-path (concat user-emacs-directory "recipes"))
+
+;; lock
+(el-get-bundle el-get-lock)
+(el-get-lock)
+
 (el-get 'sync)
 
 (el-get-bundle with-eval-after-load-feature)

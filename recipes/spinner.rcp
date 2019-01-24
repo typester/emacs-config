@@ -1,4 +1,0 @@
-(:name spinner
-       :description "Emacs mode-line spinner for operations in progress"
-       :type github
-       :pkgname "Malabarba/spinner.el")

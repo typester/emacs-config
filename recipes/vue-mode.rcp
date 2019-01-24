@@ -1,5 +1,0 @@
-(:name vue-mode
-       :description "Emacs major mode for vue.js"
-       :type github
-       :pkgname "AdamNiederer/vue-mode"
-       :depends (mmm-mode vue-html-mode ssass-mode edit-indirect))

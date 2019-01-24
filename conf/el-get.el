@@ -3,8 +3,7 @@
 (setq
  el-get-dir (concat user-emacs-directory "el-get")
  el-get-verbose t
- el-get-user-package-directory (concat user-emacs-directory "conf/init")
- el-get-generate-autoloads nil)
+ el-get-generate-autoloads t)
 
 (unless (require 'el-get nil 'noerror)
   (with-current-buffer
@@ -16,56 +15,10 @@
 
 (add-to-list 'el-get-recipe-path (concat user-emacs-directory "recipes"))
 
-;; ddskkだけ先に読み込む
-(el-get 'sync '(popup ddskk))
+;; lock
+(el-get-bundle el-get-lock)
+(el-get-lock)
 
-(el-get 'sync
-        '(el-get
-          helm
-          helm-ag
-          helm-ls-git
-          htmlize
-          s
-          anything
-          auto-save-buffers-enhanced
-;          cperl-mode
-          lsp-mode
-          company-lsp
-          emacs-cquery
-          perl-completion
-          perl-debug
-          markdown-mode
-          clmemo
-          ee
-          git-gutter
-          open-junk-file
-          emacs-w3m
-          auto-complete
-          go-mode
-          go-eldoc
-          scss-mode
-          org-mode
-          org-bullets
-          lua-mode
-          yasnippet
-          howm
-          yaml-mode
-          dockerfile-mode
-          web-mode
-          swift-mode
-          company-mode
-          pos-tip                       ; require company-quickhelp
-          company-quickhelp
-          systemd-mode
-          tide
-          apib-mode
-          f
-          rust-mode
-          emacs-racer
-          toml-mode
-          po-mode
-          vue-mode
-          ))
+(el-get 'sync)
 
-(if (locate-file "llvm-config" exec-path)
-    (el-get 'sync '(clang-complete-async)))
+(el-get-bundle with-eval-after-load-feature)

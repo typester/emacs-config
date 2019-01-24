@@ -2,3 +2,7 @@ auto-save-list/*
 el-get/*
 elpa/*
 *.elc
+straight/*
+conf/*-customize.el
+network-security.data
+recentf

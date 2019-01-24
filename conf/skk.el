@@ -12,7 +12,7 @@
 
   ;; user dic
   (setq skk-jisyo-code 'utf-8)
-  (setq skk-jisyo (concat (getenv "HOME") "/Dropbox/skk/skk-jisyo-emacs.utf8"))
+  (setq skk-jisyo (concat (getenv "HOME") "/drive/skk/skk-jisyo-emacs.utf8"))
   (setq skk-share-private-jisyo t)
   (setq skk-save-jisyo-instantly t)
 

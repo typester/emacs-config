@@ -49,4 +49,5 @@
 
 ;; start server
 (require 'server)
-(server-start)
+(or (server-running-p)
+    (server-start))

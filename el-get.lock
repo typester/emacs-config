@@ -1,5 +1,7 @@
 (setq el-get-lock-package-versions
-      '((ddskk :checksum "363a91933d8c83e03be042bd7fbbda8eac3b0b72")
+      '((emacs-fish :checksum "35fc7c1e243a7410823088a571ecf378e9f3efa6")
+        (go-mode :checksum "120fb911f1d8038f828da85eed8aaad977dabd8c")
+        (ddskk :checksum "363a91933d8c83e03be042bd7fbbda8eac3b0b72")
         (lua-mode :checksum "95c64bb5634035630e8c59d10d4a1d1003265743")
         (ample-regexps :checksum "cbe91e148cac1ee8e223874dc956ed4cf607f046")
         (web-mode :checksum "5da977bec7714c09d41b556e2d651ccb269a14a2")

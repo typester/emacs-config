@@ -25,6 +25,7 @@
                 "c.el"
                 "rust.el"
                 "typescript.el"
+                "go.el"
                 "misc.el"
                 "skk.el"
                 ))

@@ -51,3 +51,6 @@
 (require 'server)
 (or (server-running-p)
     (server-start))
+
+;; show trailing space
+(setq-default show-trailing-whitespace t)

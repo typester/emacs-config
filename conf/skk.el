@@ -1,6 +1,7 @@
 (el-get-bundle ddskk
   (require 'skk)
   (require 'skk-dcomp)
+
   ;; key
   (define-key global-map (kbd "C-x C-o") 'skk-mode)
   (setq skk-kakutei-key (kbd "C-o"))
@@ -16,7 +17,7 @@
   (setq skk-share-private-jisyo t)
   (setq skk-save-jisyo-instantly t)
 
-;;; カナモードのときにC-oしてもひらがなモードにもどる
+  ;; カナモードのときにC-oしてもひらがなモードにもどる
   (defun my:skk-kakutei-key (arg)
     (interactive "P")
     (if skk-henkan-mode
@@ -28,7 +29,7 @@
 
   ;; skk-latin-mode for all buffers
   (define-globalized-minor-mode global-skk-latin-mode skk-latin-mode skk-latin-mode-on)
-  (global-skk-latin-mode 1)
+  (add-hook 'after-init-hook 'global-skk-latin-mode)
 
   (setq skk-show-tooltip t)
 

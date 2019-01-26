@@ -21,7 +21,7 @@
                 "flycheck.el"
                 "org.el"
                 "howm.el"
-                "eglot.el"
+                "lsp.el"
                 "c.el"
                 "rust.el"
                 "typescript.el"

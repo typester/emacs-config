@@ -3,4 +3,4 @@
   (setq rustic-rls-pkg nil)
   (setq rustic-format-on-save nil)
   (with-eval-after-load-feature 'rustic
-    (add-hook 'rustic-mode-hook #'eglot-ensure)))
+    (add-hook 'rustic-mode-hook #'lsp)))

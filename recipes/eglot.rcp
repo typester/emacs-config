@@ -1,5 +1,0 @@
-(:name eglot
-       :description "A client for Language Server Protocol servers"
-       :type github
-       :pkgname "joaotavora/eglot"
-       :depends (jsonrpc))

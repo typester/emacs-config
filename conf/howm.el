@@ -1,4 +1,10 @@
-(el-get-bundle howm :autoload nil
+(el-get-bundle howm
+  :autoload nil
+  :type http-tar
+  :options ("xzf")
+  :url "https://howm.osdn.jp/a/howm-1.4.5.tar.gz"
+  :build `(("./configure" ,(concat "--with-emacs=" el-get-emacs)) ("make"))
+
   (autoload 'howm-menu "howm" "Hitori Otegaru Wiki Modoki" t)
   (autoload 'howm-list-all "howm" "Hitori Otegaru Wiki Modoki" t)
   (autoload 'howm-create "howm" "Hitori Otegaru Wiki Modoki" t)

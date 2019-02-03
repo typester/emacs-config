@@ -35,6 +35,10 @@
   ;; global completion key
   (define-key global-map (kbd "C-;") 'company-complete))
 
-(el-get-bundle company-quickhelp :features (company-quickhelp)
+(el-get-bundle company-quickhelp 
+  :type github
+  :pkgname "expez/company-quickhelp"
+  :depends (company-mode pos-tip)
+  :features (company-quickhelp)
   (setq company-quickhelp-color-background "dark slate gray")
   (add-hook 'after-init-hook 'company-quickhelp-mode))

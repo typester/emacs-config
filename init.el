@@ -44,3 +44,6 @@
 ;; currently detect termux by check arch because I don't have any other arm devices
 (when (string-match "aarch64" (shell-command-to-string "uname -m"))
   (my/load-conf '("termux.el")))
+
+;; el-get sync
+(el-get 'sync)

@@ -1,5 +1,0 @@
-(:name rustic
-       :description "Rust development environment for Emacs"
-       :type github
-       :pkgname "brotzeit/rustic"
-       :depends (dash f markdown-mode projectile s spinner xterm-color))

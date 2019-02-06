@@ -1,4 +1,5 @@
 (el-get-bundle lsp-mode)
+(el-get-bundle yasnippet)
 (el-get-bundle company-lsp
   :type github
   :pkgname "tigersoldier/company-lsp"

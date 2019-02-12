@@ -29,6 +29,7 @@
                 "vue.el"
                 "misc.el"
                 "skk.el"
+                "magit.el"
                 ))
 
 ;; window system specific config

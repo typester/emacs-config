@@ -26,6 +26,7 @@
                 "rust.el"
                 "typescript.el"
                 "go.el"
+                "vue.el"
                 "misc.el"
                 "skk.el"
                 ))

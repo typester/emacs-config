@@ -6,3 +6,10 @@
   (auto-save-buffers-enhanced-include-only-checkout-path t)
   (auto-save-buffers-enhanced t)
   (setq auto-save-buffers-enhanced-quiet-save-p t))
+
+(run-with-idle-timer 5 t
+                     '(lambda ()
+                        (and (string= major-mode "go-mode")
+                             (gofmt))
+                        (and (string= major-mode "rust-mode")
+                             (rust-format-buffer))))

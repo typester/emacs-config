@@ -6,3 +6,4 @@
     (setenv "PATH" (concat (expand-file-name p) ":" (getenv "PATH")))))
 
 (setenv "GOPATH" (expand-file-name "~/dev"))
+(setenv "GO111MODULE" "on")

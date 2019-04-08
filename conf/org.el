@@ -28,7 +28,7 @@
 
   (setq org-publish-project-alist
         '(("unknownplace.org"
-           :base-directory "~/drive/org/public/unknownplace.org"
+           :base-directory "~/dev/src/github.com/typester/blog-entries"
            :base-extension "org"
            :publishing-directory "~/dev/src/github.com/typester/unknownplace.org/data"
            :recursive t

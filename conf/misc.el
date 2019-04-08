@@ -7,4 +7,4 @@
        (progn
          (setq plantuml-jar-path "/usr/share/java/plantuml/plantuml.jar")
          (setq plantuml-java-command "/usr/lib/jvm/java-11-openjdk/bin/java"))))
-
+(el-get-bundle yaml-mode)

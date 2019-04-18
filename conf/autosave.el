@@ -9,6 +9,9 @@
 
 (run-with-idle-timer 5 t
                      '(lambda ()
+                        (and (and (or (string= major-mode "c-mode") (string= major-mode "c++-mode"))
+                                  (locate-dominating-file (buffer-file-name) ".clang-format"))
+                             (clang-format-buffer))
                         (and (string= major-mode "go-mode")
                              (gofmt))
                         (and (string= major-mode "rust-mode")

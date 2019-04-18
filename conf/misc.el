@@ -11,3 +11,4 @@
 (el-get-bundle yaml-mode)
 (el-get-bundle pkgbuild-mode :type github :pkgname "juergenhoetzel/pkgbuild-mode" ; recipe bundled with el-get doesn't use autoload, so redefine it
   (setq pkgbuild-update-sums-on-save nil))
+(el-get-bundle cmake-mode)

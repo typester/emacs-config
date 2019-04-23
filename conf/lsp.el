@@ -3,6 +3,6 @@
 (el-get-bundle company-lsp
   :type github
   :pkgname "tigersoldier/company-lsp"
-  :depends (company-mode lsp-mode s dash seq)
+  :depends (company-mode lsp-mode s dash seq markdown-mode)
   :features (company-lsp)
   (push 'company-lsp company-backends))

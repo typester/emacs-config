@@ -1,4 +1,7 @@
-(el-get-bundle lsp-mode)
+(el-get-bundle lsp-mode
+  (setq lsp-prefer-flymake nil))
+(el-get-bundle lsp-ui
+  (add-hook 'lsp-mode-hook 'lsp-ui-mode))
 (el-get-bundle yasnippet)
 (el-get-bundle company-lsp
   :type github

@@ -4,6 +4,7 @@
 
   (require 'auto-save-buffers-enhanced)
   (auto-save-buffers-enhanced-include-only-checkout-path t)
+  (add-to-list 'auto-save-buffers-enhanced-include-regexps (concat "^" (expand-file-name "~/drive")))
   (auto-save-buffers-enhanced t)
   (setq auto-save-buffers-enhanced-quiet-save-p t))
 

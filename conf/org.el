@@ -11,14 +11,14 @@
         '(
           ("a" "Archive" plain (file (lambda ()
                                     (let* ((slug (read-string "slug: "))
-                                           (dir "~/dev/src/github.com/typester/blog-entries/archive"))
+                                           (dir "~/drive/org/public/unknownplace.org/archives"))
                                       (require 'org-id)
                                       (make-directory dir t)
                                       (concat dir "/" slug ".org"))))
            "#+TITLE: %?\n#+DATE: %T\n#+TAGS: draft\n#+EID: %(org-id-uuid)\n\n")
           ("b" "Blog" plain (file (lambda ()
                                     (let* ((slug (read-string "slug: "))
-                                           (dir (concat "~/dev/src/github.com/typester/blog-entries/blog"
+                                           (dir (concat "~/drive/org/public/unknownplace.org/blog"
                                                         (format-time-string "/%Y/%m/%d"))))
                                       (require 'org-id)
                                       (make-directory dir t)
@@ -28,7 +28,7 @@
 
   (setq org-publish-project-alist
         '(("unknownplace.org"
-           :base-directory "~/dev/src/github.com/typester/blog-entries"
+           :base-directory "~/drive/org/public/unknownplace.org"
            :base-extension "org"
            :publishing-directory "~/dev/src/github.com/typester/unknownplace.org/data"
            :recursive t

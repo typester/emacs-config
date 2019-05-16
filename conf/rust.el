@@ -7,4 +7,7 @@
   (setq rustic-rls-pkg nil)
   (setq rustic-format-on-save nil)
   (with-eval-after-load-feature 'rustic
-    (add-hook 'rustic-mode-hook #'lsp)))
+    (add-hook 'rustic-mode-hook #'(lambda ()
+                                    ;(require 'rustic-lsp)
+                                    (lsp-workspace-folders-add (rustic-buffer-workspace))
+                                    (lsp)))))

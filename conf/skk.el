@@ -3,7 +3,7 @@
   (require 'skk-dcomp)
 
   ;; key
-  (define-key global-map (kbd "C-x C-o") 'skk-mode)
+  (define-key global-map (kbd "C-o") 'skk-mode)
   (setq skk-kakutei-key (kbd "C-o"))
   (setq mac-pass-control-to-system nil)
 
@@ -27,9 +27,10 @@
   (add-to-list 'skk-rom-kana-rule-list
 	           '(skk-kakutei-key nil my:skk-kakutei-key))
 
-  ;; skk-latin-mode for all buffers
-  (define-globalized-minor-mode global-skk-latin-mode skk-latin-mode skk-latin-mode-on)
-  (add-hook 'after-init-hook 'global-skk-latin-mode)
+  ;; this is no loger working
+  ;;;; skk-latin-mode for all buffers
+  ;;(define-globalized-minor-mode global-skk-latin-mode skk-latin-mode skk-latin-mode-on)
+  ;;(add-hook 'after-init-hook 'global-skk-latin-mode)
 
   (setq skk-show-tooltip t)
 

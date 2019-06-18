@@ -54,3 +54,6 @@
 
 ;; show trailing space
 (setq-default show-trailing-whitespace t)
+
+;; auto revert mode
+(global-auto-revert-mode 1)

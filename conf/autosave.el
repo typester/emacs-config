@@ -16,4 +16,6 @@
                         (and (string= major-mode "go-mode")
                              (gofmt))
                         (and (string= major-mode "rust-mode")
-                             (rust-format-buffer))))
+                             (rust-format-buffer))
+                        (and (and (buffer-modified-p) buffer-file-name)
+                             (save-buffer))))

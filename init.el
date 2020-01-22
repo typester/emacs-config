@@ -27,6 +27,7 @@
                 "typescript.el"
                 "go.el"
                 "vue.el"
+                "dart.el"
                 "misc.el"
                 "skk.el"
                 "magit.el"

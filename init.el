@@ -26,6 +26,7 @@
                 "rust.el"
                 "typescript.el"
                 "go.el"
+                "kotlin.el"
                 "vue.el"
                 "dart.el"
                 "misc.el"

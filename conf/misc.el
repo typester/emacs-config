@@ -13,3 +13,9 @@
   (setq pkgbuild-update-sums-on-save nil))
 (el-get-bundle cmake-mode)
 (el-get-bundle systemd-mode)
+
+;; utils
+(defun restart-server ()
+  (interactive)
+  (server-force-delete)
+  (server-start))

@@ -33,7 +33,8 @@
   (add-hook 'after-init-hook 'global-company-mode)
 
   ;; global completion key
-  (define-key global-map (kbd "C-;") 'company-complete))
+  (define-key global-map (kbd "C-;") 'company-complete)
+  (define-key global-map (kbd "M-i") 'company-complete))
 
 (el-get-bundle company-quickhelp 
   :type github

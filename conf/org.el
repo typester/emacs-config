@@ -21,8 +21,8 @@
                                            (dir (concat "~/dev/src/github.com/typester/blog-entries/blog")))
                                       (require 'org-id)
                                       (make-directory dir t)
-           "#+TITLE: %?\n#+DATE: %T\n#+TAGS: draft\n#+EID: %(org-id-uuid)\n\n")
                                       (concat dir "/" (format-time-string "%Y-%m-%d_") slug ".org"))))
+           "#+TITLE: %?\n#+DATE: %T\n#+TZ: %(format-time-string \"%z (%Z)\")\n#+TAGS: draft\n#+EID: %(org-id-uuid)\n\n")
           ))
 
   (setq org-publish-project-alist

@@ -19,3 +19,6 @@
   (interactive)
   (server-force-delete)
   (server-start))
+
+;; set keys for CUI
+(define-key global-map (kbd "C-x SPC") 'set-mark-command)

@@ -13,6 +13,7 @@
   (setq pkgbuild-update-sums-on-save nil))
 (el-get-bundle cmake-mode)
 (el-get-bundle systemd-mode)
+(el-get-bundle swift-mode)
 
 ;; utils
 (defun restart-server ()

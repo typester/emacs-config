@@ -32,6 +32,7 @@
                 "misc.el"
                 "skk.el"
                 "magit.el"
+                "helm-dash.el"
                 ))
 
 ;; window system specific config

@@ -8,6 +8,11 @@
   ;(setq rustic-format-on-save nil)
   (with-eval-after-load-feature 'rustic
     (setq rustic-lsp-server 'rls)
+
+    (add-hook'rustic-mode-hook #'(lambda ()
+                                   (yas-minor-mode-on)
+                                   ))
+    
 ;    
 ;    (add-hook 'rustic-mode-hook #'(lambda ()
 ;                                        ;(require 'rustic-lsp)

@@ -39,7 +39,8 @@
 (when (equal window-system 'x)
   (my/load-conf '("x-common.el"
                   "x-font.el"
-                  "x-theme.el")))
+                  "x-theme.el"
+                  "emoji.el")))
 (when (null window-system)
   (my/load-conf '("nw-common.el"))
   (when (>= (display-color-cells) 256)

@@ -1,6 +1,6 @@
 (el-get-bundle clang-format
   :type http
-  :url "https://llvm.org/svn/llvm-project/cfe/trunk/tools/clang-format/clang-format.el"
+  :url "https://raw.githubusercontent.com/llvm/llvm-project/main/clang/tools/clang-format/clang-format.el"
   :depends (json))
 
 (el-get-bundle emacs-ccls

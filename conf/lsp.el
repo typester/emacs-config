@@ -1,6 +1,14 @@
 (el-get-bundle lsp-mode
   (setq lsp-prefer-flymake nil)
+
+  ;; tune ref: https://emacs-lsp.github.io/lsp-mode/page/performance/
+  (setq gc-cons-threshold 100000000)
+  (setq read-process-output-max (* 1024 1024)) ;; 1mb  
+  (setq lsp-completion-provider :capf)
+  (setq lsp-idle-delay 0.500)
+  
   (add-to-list 'load-path (concat user-emacs-directory "el-get/lsp-mode/clients")))
+
 (el-get-bundle lsp-ui
   (add-hook 'lsp-mode-hook 'lsp-ui-mode)
   (with-eval-after-load-feature 'lsp-ui

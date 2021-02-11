@@ -7,7 +7,8 @@
   ;(setq rustic-rls-pkg nil)
   ;(setq rustic-format-on-save nil)
   (with-eval-after-load-feature 'rustic
-    (setq rustic-lsp-server 'rls)
+    ;(setq rustic-lsp-server 'rls)
+    (setq rustic-lsp-server 'rust-analyzer)
 
     (add-hook'rustic-mode-hook #'(lambda ()
                                    (yas-minor-mode-on)

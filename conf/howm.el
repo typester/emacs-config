@@ -17,7 +17,7 @@
   (setq howm-template "* %cursor\n  %date\n  ")
   (setq howm-template-date-format "[%Y-%m-%d %a %H:%M]")
 
-  (define-key global-map (kbd "C-x m") 'howm-create)
+  ;(define-key global-map (kbd "C-x m") 'howm-create) ;; now use this for org-capture
   (define-key global-map (kbd "C-c , ,") 'howm-menu)
   (define-key global-map (kbd "C-c , a") 'howm-list-all))
 

@@ -23,3 +23,5 @@
 
 ;; set keys for CUI
 (define-key global-map (kbd "C-x SPC") 'set-mark-command)
+
+

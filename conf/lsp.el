@@ -21,3 +21,20 @@
 ;;  :depends (company-mode lsp-mode s dash seq markdown-mode)
 ;;  :features (company-lsp)
 ;;  (push 'company-lsp company-backends))
+
+(el-get-bundle "emacsorphanage/tree-mode")
+(el-get-bundle "emacs-lsp/dap-mode"
+  :depends (bui dash f lsp-mode lsp-treemacs posframe s)
+  (require 'dap-mode)
+  (require 'dap-gdb-lldb)
+  (dap-gdb-lldb-setup)
+  (with-eval-after-load-feature 'dap-mode
+    (dap-register-debug-template "Rust::GDB Run Configuration"
+                             (list :type "gdb"
+                                   :request "launch"
+                                   :name "GDB::Run"
+                           :gdbpath "rust-gdb"
+                                   :target nil
+                                   :cwd nil))
+    (dap-mode 1)
+    ))

@@ -1,6 +1,22 @@
 (el-get-bundle "typester/ox-blosxom" :depends (htmlize))
 
-(el-get-bundle org-mode :autoloads nil
+;; customize recipe to remove unexist directory 'confrib/lisp'
+(el-get-bundle "org-mode"
+  :type git
+  :url "https://code.orgmode.org/bzg/org-mode.git"
+  :info "doc"
+  :build/berkeley-unix `,(mapcar
+                          (lambda (target)
+                            (list "gmake" target (concat "EMACS=" (shell-quote-argument el-get-emacs))))
+                          '("oldorg"))
+  :build `,(mapcar
+            (lambda (target)
+              (list "make" target (concat "EMACS=" (shell-quote-argument el-get-emacs))))
+            '("oldorg"))
+  :load-path ("." "lisp")
+  :load ("lisp/org-loaddefs.el")
+  :autoloads nil
+;;(el-get-bundle org-mode :autoloads nil
   ;(setq org-startup-folded nil)
   (setq org-use-sub-superscripts '{})
   (setq org-export-with-sub-superscripts '{})
@@ -108,24 +124,23 @@
   ;; just add timestamp on header
   (setq org-roam-dailies-capture-templates
         '(("d" "default" entry
-           #'org-roam-capture--get-point
            "\n* %<%H:%M>\n%?"
-           :file-name "daily/%<%Y-%m-%d>"
-           :head "#+title: %<%Y-%m-%d>\n\n")))
+           :if-new (file+head "%<%Y-%m-%d>.org"
+                              "#+title: %<%Y-%m-%d>\n\n"))))
 
-  (add-hook 'after-init-hook 'org-roam-mode)
+  (add-hook 'after-init-hook 'org-roam-setup)
 
   (with-eval-after-load 'org-roam
     (require 'org-roam-protocol)
-    (define-key org-roam-mode-map (kbd "C-c n f") 'org-roam-find-file)
-    (define-key org-roam-mode-map (kbd "C-c n i") 'org-roam-insert)
-    (define-key org-roam-mode-map (kbd "C-c n d") 'org-roam-dailies-capture-today))
+    (define-key global-map (kbd "C-c n f") 'org-roam-node-find)
+    (define-key global-map (kbd "C-c n i") 'org-roam-node-insert)
+    (define-key global-map (kbd "C-c n d") 'org-roam-dailies-capture-today))
   )
 
 ;;; org-cliplink
 ;(el-get-bundle org-cliplink)
 
-;; org-gcal
-(el-get-bundle org-gcal
-  
-  )
+;;;; org-gcal
+;;(el-get-bundle org-gcal
+;;  
+;;  )

@@ -115,7 +115,8 @@
 (el-get-bundle org-roam
   :type github
   :pkgname "org-roam/org-roam"
-  :depends (dash f s org-mode emacsql)
+  :depends (dash f s org-mode emacsql magit)
+  :load-path ("." "extensions")
   :info "./doc"
   :build `(("make" ,(format "EMACSBIN=%s" el-get-emacs) "docs"))
 
@@ -128,13 +129,21 @@
            :if-new (file+head "%<%Y-%m-%d>.org"
                               "#+title: %<%Y-%m-%d>\n\n"))))
 
-  (add-hook 'after-init-hook 'org-roam-setup)
+  ;(add-hook 'after-init-hook 'org-roam-setup)
+  (message "el-get bundle org-roam")
+  ;(require 'org-roam)
+  ;(message "require ok")
 
   (with-eval-after-load 'org-roam
+    (message "after load ok");
     (require 'org-roam-protocol)
     (define-key global-map (kbd "C-c n f") 'org-roam-node-find)
     (define-key global-map (kbd "C-c n i") 'org-roam-node-insert)
-    (define-key global-map (kbd "C-c n d") 'org-roam-dailies-capture-today))
+    (define-key global-map (kbd "C-c n d") 'org-roam-dailies-capture-today)
+    (message "define ley ok"))
+
+  (org-roam-db-autosync-mode)
+  (message "autosync ok")
   )
 
 ;;; org-cliplink

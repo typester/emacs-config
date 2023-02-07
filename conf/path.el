@@ -1,6 +1,7 @@
 (let*
     ((path '("~/dev/bin"
              "~/.cargo/bin"
+             "/opt/homebrew/bin"
              "~/dev/src/github.com/flutter/flutter/bin"
              "~/dev/src/github.com/flutter/flutter/bin/cache/dart-sdk/bin")))
   (dolist (p path)

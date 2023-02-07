@@ -1,7 +1,5 @@
-(el-get-bundle rustic
-  :type github
-  :pkgname "brotzeit/rustic"
-  :depends (dash f markdown-mode projectile s spinner xterm-color)
+(el-get-bundle "brotzeit/rustic"
+  :depends (dash f markdown-mode s spinner xterm-color)
 
   (with-eval-after-load-feature 'rustic
     (add-hook 'rustic-mode-hook #'(lambda ()

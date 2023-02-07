@@ -15,7 +15,7 @@
 (my/load-conf '("common.el"
                 "path.el"
                 "el-get.el"
-                "autosave.el"
+                ;;"autosave.el"
                 "ivy.el"
                 "company.el"
                 "flycheck.el"
@@ -41,6 +41,13 @@
                   "x-font.el"
                   "x-theme.el"
                   "emoji.el")))
+;; macOS
+(when (equal window-system 'ns)
+  (my/load-conf '("ns-common.el"
+                  "x-theme.el"          ; share same setting with x for now
+                  "ns-font.el")))
+
+;; nw
 (when (null window-system)
   (my/load-conf '("nw-common.el"))
   (when (>= (display-color-cells) 256)

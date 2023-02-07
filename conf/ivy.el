@@ -1,4 +1,13 @@
-(el-get-bundle swiper :features (ivy counsel)
+(el-get-bundle hydra
+  (require 'hydra))
+
+(el-get-bundle "abo-abo/swiper"
+  :depends (cl-lib avy hydra)
+  :build `(("make" ,(format "emacs=%s -L %s -L %s" el-get-emacs (concat (file-name-as-directory el-get-dir) "avy") (concat (file-name-as-directory el-get-dir) "hydra")) "compile")
+           ("makeinfo" "-o" "doc/ivy.info" "doc/ivy.texi"))
+
+  :features (ivy counsel)
+
   (ivy-mode 1)
   (setq ivy-use-virtual-buffers t)
   (setq enable-recursive-minibuffers t)

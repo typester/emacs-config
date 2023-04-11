@@ -5,17 +5,31 @@
 
 (el-get-bundle tide)
 
+(defun my/init-ts-mode ()
+  (if (string-match-p "\\.stories\\.tsx?$" (buffer-name))
+      (tide-setup)
+    (progn
+      (yas-minor-mode 1)
+      (lsp))))
+
 (el-get-bundle web-mode
   (add-to-list 'auto-mode-alist '("\\.\\(j\\|t\\)sx\\'" . web-mode))
   (with-eval-after-load-feature 'web-mode
-    (add-hook 'web-mode-hook 
+    ;; need this since lsp-mode dosn't care web-mode indent setting by default
+    ;; https://github.com/emacs-lsp/lsp-mode/issues/2915
+    (add-hook 'web-mode-hook
               (lambda ()
                 (when (string-equal "tsx" (file-name-extension buffer-file-name))
-                  (tide-setup))
+                  (progn
+                    (my/init-ts-mode)
+                    (add-to-list 'lsp--formatting-indent-alist `(web-mode . web-mode-code-indent-offset)))
+                  )
                 (flycheck-add-mode 'typescript-tslint 'web-mode)))))
 
 (el-get-bundle typescript-mode
   (with-eval-after-load-feature 'typescript-mode
     (setq typescript-indent-level 2)
-    (add-hook 'typescript-mode-hook (lambda ()
-                                      (tide-setup)))))
+    (add-hook 'typescript-mode-hook 'my/init-ts-mode)))
+
+(setq lsp-tailwindcss-add-on-mode 1)
+(el-get-bundle merrickluo/lsp-tailwindcss)

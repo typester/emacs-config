@@ -66,6 +66,9 @@
                              (,(concat my/org-agenda-directory "someday.org") :level . 0)
                              (,(concat my/org-agenda-directory "projects/homma.org") :maxlevel . 1)))
 
+  ;; archive
+  (setq org-archive-location "~/drive/org/archive.org::datetree/")
+
   ;; org-capture
   (define-key global-map (kbd "C-x m") 'org-capture)
   (define-key global-map (kbd "C-x M") 'org-capture)
@@ -120,6 +123,7 @@
   :info "./doc"
   :build `(("make" ,(format "EMACSBIN=%s" el-get-emacs) "docs"))
 
+  (setq org-roam-v2-ack t)
   (setq  org-roam-directory "~/drive/org/braindump")
 
   ;; just add timestamp on header
@@ -145,6 +149,10 @@
   (org-roam-db-autosync-mode)
   (message "autosync ok")
   )
+
+;; anki-editor
+(el-get-bundle "louietan/anki-editor")
+
 
 ;;; org-cliplink
 ;(el-get-bundle org-cliplink)

@@ -1,7 +1,7 @@
 (if (and (fboundp 'display-pixel-width)
          (>= (display-pixel-width) 3840))
     (set-face-attribute 'default nil
-                        :family "Cica" :height 140)
+                        :family "Cica" :height 140) ;; 140
   (set-face-attribute 'default nil
                       :family "Cica" :height 110))
 

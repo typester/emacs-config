@@ -40,7 +40,8 @@
   (my/load-conf '("x-common.el"
                   "x-font.el"
                   "x-theme.el"
-                  "emoji.el")))
+                  ;"emoji.el"
+                  )))
 ;; macOS
 (when (equal window-system 'ns)
   (my/load-conf '("ns-common.el"

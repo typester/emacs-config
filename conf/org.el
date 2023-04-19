@@ -66,6 +66,9 @@
                              (,(concat my/org-agenda-directory "someday.org") :level . 0)
                              (,(concat my/org-agenda-directory "projects/homma.org") :maxlevel . 1)))
 
+  ;; archive
+  (setq org-archive-location "~/drive/org/archive.org::datetree/")
+
   ;; org-capture
   (define-key global-map (kbd "C-x m") 'org-capture)
   (define-key global-map (kbd "C-x M") 'org-capture)

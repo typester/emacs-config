@@ -14,6 +14,7 @@
 (el-get-bundle cmake-mode)
 (el-get-bundle systemd-mode)
 (el-get-bundle swift-mode)
+(el-get-bundle mmcjimsey26/yuck-mode)
 
 ;; utils
 (defun restart-server ()

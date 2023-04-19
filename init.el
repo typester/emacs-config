@@ -36,7 +36,7 @@
                 ))
 
 ;; window system specific config
-(when (equal window-system 'x)
+(when (or (equal window-system 'x) (equal window-system 'pgtk))
   (my/load-conf '("x-common.el"
                   "x-font.el"
                   "x-theme.el"

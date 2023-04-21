@@ -3,14 +3,8 @@
 
   (with-eval-after-load-feature 'rustic
     (add-hook 'rustic-mode-hook #'(lambda ()
-                                   (yas-minor-mode-on)
-                                   (lsp)
-                                   ))
-    
-;    
-;    (add-hook 'rustic-mode-hook #'(lambda ()
-;                                        ;(require 'rustic-lsp)
-;                                    (lsp-workspace-folders-add (rustic-buffer-workspace))
-;                                    (lsp)
-;                                    ))
-    ))
+                                    (lsp)
+                                    (yas-minor-mode 1)))))
+
+(add-hook 'emacs-startup-hook #'(lambda ()
+                                  (setq auto-mode-alist (rassq-delete-all 'rust-mode auto-mode-alist))))

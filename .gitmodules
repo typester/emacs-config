@@ -1,0 +1,3 @@
+[submodule "deps/ox-blosxom"]
+	path = deps/ox-blosxom
+	url = git@github.com:typester/ox-blosxom.git

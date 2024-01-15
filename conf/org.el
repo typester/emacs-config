@@ -1,3 +1,5 @@
+(use-package htmlize :ensure t)
+
 (use-package org
   :init
   (setq org-use-sub-superscripts '{})
@@ -28,6 +30,39 @@
   (setq org-archive-location "~/drive/org/archive.org::datetree/")
 
   (require 'org-tempo)
+
+  ;; blog
+  (add-to-list 'load-path (concat user-emacs-directory "deps/ox-blosxom"))
+  (require 'ox-html-json)
+
+  (setq org-capture-templates
+        `(
+          ("a" "Archive" plain (file (lambda ()
+                                    (let* ((slug (read-string "slug: "))
+                                           (dir "~/dev/src/github.com/typester/blog-entries/archives"))
+                                      (require 'org-id)
+                                      (make-directory dir t)
+                                      (concat dir "/" slug ".org"))))
+           "#+TITLE: %?\n#+DATE: %T\n#+TAGS: draft\n#+EID: %(org-id-uuid)\n\n")
+          ("b" "Blog" plain (file (lambda ()
+                                    (let* ((slug (read-string "slug: "))
+                                           (dir (concat "~/dev/src/github.com/typester/blog-entries/blog")))
+                                      (require 'org-id)
+                                      (make-directory dir t)
+                                      (concat dir "/" (format-time-string "%Y-%m-%d_") slug ".org"))))
+           "#+TITLE: %?\n#+DATE: %T\n#+TZ: %(format-time-string \"%z (%Z)\")\n#+TAGS: draft\n#+EID: %(org-id-uuid)\n\n")
+
+          ("i" "inbox" entry (file ,(concat my/org-agenda-directory "inbox.org"))
+           "* TODO %?")
+          ))
+
+  (setq org-publish-project-alist
+        '(("unknownplace.org"
+           :base-directory "~/dev/src/github.com/typester/blog-entries"
+           :base-extension "org"
+           :publishing-directory "~/dev/src/github.com/typester/unknownplace.org/data"
+           :recursive t
+           :publishing-function org-html-json-publish-to-json)))
 
   :bind ("C-c a" . org-agenda))
 

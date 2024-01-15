@@ -20,3 +20,4 @@
 
 ;; cursor blink off
 (blink-cursor-mode 0)
+

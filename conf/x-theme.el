@@ -1,4 +1,5 @@
-(add-to-list 'custom-theme-load-path (concat user-emacs-directory "themes/"))
-;;(load-theme 'me t)
-(load-theme 'dracula t)
+(use-package dracula-theme
+  :ensure t
+  :config (load-theme 'dracula t))
 
+(set-frame-parameter nil 'undecorated t)

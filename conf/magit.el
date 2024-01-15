@@ -1,3 +1,0 @@
-(el-get-bundle magit
-  
-  )

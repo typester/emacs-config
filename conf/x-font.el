@@ -10,11 +10,11 @@
 ;; (set-frame-font "-*-Cica-normal-normal-normal-*-16-*-*-*-*-0-iso10646-1" t t)
 (if (and (fboundp 'display-pixel-width)
          (>= (display-pixel-width) 5000)) ; for case when I use xrandr wrong way and width > 5000
-    (set-frame-font "-*-Cica-normal-normal-normal-*-20-*-*-*-*-0-iso10646-1" t t)
+    (set-frame-font "-*-Cica-normal-normal-normal-*-18-*-*-*-*-0-iso10646-1" t t)
   (set-frame-font "-*-Cica-normal-normal-normal-*-16-*-*-*-*-0-iso10646-1" t t))
-
 
 ;; ↑だけだと日本語が違うfontになっちゃうことがある
 (dolist (code '(japanese-jisx0208 katakana-jisx0201))
   (set-fontset-font nil code
                     (font-spec :family "Cica")))
+

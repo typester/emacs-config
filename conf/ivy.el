@@ -1,16 +1,11 @@
-(el-get-bundle hydra
-  (require 'hydra))
-
-(el-get-bundle "abo-abo/swiper"
-  :depends (cl-lib avy hydra)
-  :build `(("make" ,(format "emacs=%s -L %s -L %s" el-get-emacs (concat (file-name-as-directory el-get-dir) "avy") (concat (file-name-as-directory el-get-dir) "hydra")) "compile")
-           ("makeinfo" "-o" "doc/ivy.info" "doc/ivy.texi"))
-
-  :features (ivy counsel)
-
-  (ivy-mode 1)
+(use-package counsel
+  :ensure t
+  :init
+  (ivy-mode)
   (setq ivy-use-virtual-buffers t)
   (setq enable-recursive-minibuffers t)
+  (setq ivy-use-selectable-prompt t)
+  ;; Just coped from github README
   (global-set-key "\C-s" 'swiper)
   (global-set-key (kbd "C-c C-r") 'ivy-resume)
   (global-set-key (kbd "<f6>") 'ivy-resume)
@@ -18,6 +13,7 @@
   (global-set-key (kbd "C-x C-f") 'counsel-find-file)
   (global-set-key (kbd "<f1> f") 'counsel-describe-function)
   (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+  (global-set-key (kbd "<f1> o") 'counsel-describe-symbol)
   (global-set-key (kbd "<f1> l") 'counsel-find-library)
   (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
   (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
@@ -27,3 +23,4 @@
   (global-set-key (kbd "C-x l") 'counsel-locate)
   (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
   (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history))
+

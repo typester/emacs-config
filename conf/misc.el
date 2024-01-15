@@ -15,6 +15,7 @@
 (el-get-bundle systemd-mode)
 (el-get-bundle swift-mode)
 (el-get-bundle mmcjimsey26/yuck-mode)
+(el-get-bundle davazp/graphql-mode)
 
 ;; utils
 (defun restart-server ()

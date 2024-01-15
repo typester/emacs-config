@@ -7,7 +7,21 @@
   (setq lsp-completion-provider :capf)
   (setq lsp-idle-delay 0.500)
   
-  (add-to-list 'load-path (concat user-emacs-directory "el-get/lsp-mode/clients")))
+  (add-to-list 'load-path (concat user-emacs-directory "el-get/lsp-mode/clients"))
+
+  (with-eval-after-load-feature 'lsp
+    ;; workaround parsing JSON including \u0000. see: https://github.com/emacs-lsp/lsp-mode/issues/2681#issuecomment-1500173268
+    (advice-add 'json-parse-buffer :around
+              (lambda (orig &rest rest)
+                (save-excursion
+                  (while (re-search-forward "\\\\u0000" nil t)
+                    (replace-match "")))
+                (apply orig rest)))
+    (advice-add 'json-parse-string :around
+            (lambda (orig string &rest rest)
+              (apply orig (s-replace "\\u0000" "" string)
+                     rest)))
+    ))
 
 (el-get-bundle lsp-ui
   (add-hook 'lsp-mode-hook 'lsp-ui-mode)

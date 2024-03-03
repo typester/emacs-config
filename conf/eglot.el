@@ -57,3 +57,5 @@
              '((typescriptreact-mode) "typescript-language-server" "--stdio"))
   (add-to-list 'eglot-server-programs
                '((kotlin-mode) "kotlin-language-server")))
+
+(set-face-attribute 'font-lock-builtin-face nil :slant 'normal)

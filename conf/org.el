@@ -115,5 +115,6 @@
   ("C-c n d" . org-roam-dailies-map)
   :config
   (require 'org-roam-dailies)
+  (require 'org-roam-protocol)
   (org-roam-db-autosync-mode)
   )

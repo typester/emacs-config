@@ -6,3 +6,4 @@
 (use-package lua-mode :ensure t)
 (use-package dockerfile-mode :ensure t)
 (use-package systemd :ensure t)
+(use-package swift-mode :ensure t)

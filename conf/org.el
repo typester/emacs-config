@@ -5,7 +5,8 @@
   (setq org-use-sub-superscripts '{})
   (setq org-export-with-sub-superscripts '{})
   (setq my/org-agenda-directory "~/drive/org/")
-  (setq my/org-project-files `(,(concat my/org-agenda-directory "projects/homma.org")
+  (setq my/org-project-files `(,(concat my/org-agenda-directory "projects/opensource.org")
+                               ,(concat my/org-agenda-directory "projects/nature.org")
                                ,(concat my/org-agenda-directory "projects/camping.org")))
   (setq my/org-in-progress-files `,(append `(,(concat my/org-agenda-directory "next.org")) my/org-project-files))
   ;; agenda
@@ -23,7 +24,7 @@
         org-outline-path-complete-in-steps nil)
   (setq org-refile-targets `((,(concat my/org-agenda-directory "next.org") :level . 0)
                              (,(concat my/org-agenda-directory "someday.org") :level . 0)
-                             (,(concat my/org-agenda-directory "projects/homma.org") :maxlevel . 1)
+                             (,(concat my/org-agenda-directory "projects/opensource.org") :maxlevel . 1)
                              ))
 
   ;; archive
@@ -51,7 +52,13 @@
                                       (make-directory dir t)
                                       (concat dir "/" (format-time-string "%Y-%m-%d_") slug ".org"))))
            "#+TITLE: %?\n#+DATE: %T\n#+TZ: %(format-time-string \"%z (%Z)\")\n#+TAGS: draft\n#+EID: %(org-id-uuid)\n\n")
-
+          ("e" "typester.dev" plain (file (lambda ()
+                                    (let* ((slug (read-string "slug: "))
+                                           (dir (concat "~/dev/src/github.com/typester/typester.dev/entries/blog")))
+                                      (require 'org-id)
+                                      (make-directory dir t)
+                                      (concat dir "/" (format-time-string "%Y-%m-%d_") slug ".org"))))
+           "#+TITLE: %?\n#+DATE: %T\n#+TZ: %(format-time-string \"%z (%Z)\")\n#+TAGS: draft\n#+EID: %(org-id-uuid)\n\n")
           ("i" "inbox" entry (file ,(concat my/org-agenda-directory "inbox.org"))
            "* TODO %?")
           ))
@@ -61,6 +68,18 @@
            :base-directory "~/dev/src/github.com/typester/blog-entries"
            :base-extension "org"
            :publishing-directory "~/dev/src/github.com/typester/unknownplace.org/data"
+           :recursive t
+           :publishing-function org-html-json-publish-to-json)
+          ("typester.github.io"
+           :base-directory "~/dev/src/github.com/typester/typester.github.io/"
+           :base-extension "org"
+           :publishing-directory "~/dev/src/github.com/typester/typester.github.io/public/data"
+           :recursive t
+           :publishing-function org-html-json-publish-to-json)
+          ("typester.dev"
+           :base-directory "~/dev/src/github.com/typester/typester.dev/entries"
+           :base-extension "org"
+           :publishing-directory "~/dev/src/github.com/typester/typester.dev/entries-json"
            :recursive t
            :publishing-function org-html-json-publish-to-json)))
 
